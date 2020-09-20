@@ -1,8 +1,8 @@
 # This is a repo about the new Fronius GEN24 Inverters
 
-Sofware is supplied as .swe file - just a zip file that can be unpacked
-Processor sees to be an imx6sx Arm® Quad-/Dual-Core Cortex A53 CPU up to 1.5 GHz, integrated Cortex M4
-RootFS seems to be located in rootfs.ubifs file - signed unfortunately
+* Sofware is supplied as .swe file - just a zip file that can be unpacked
+* Processor sees to be an imx6sx Arm® Quad-/Dual-Core Cortex A53 CPU up to 1.5 GHz, integrated Cortex M4
+* RootFS seems to be located in rootfs.ubifs file - signed unfortunately
 
 
 #Links
