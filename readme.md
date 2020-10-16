@@ -4,6 +4,13 @@
 * Processor sees to be an imx6sx Arm® Quad-/Dual-Core Cortex A53 CPU up to 1.5 GHz, integrated Cortex M4
 * RootFS seems to be located in rootfs.ubifs file - signed unfortunately
 
+# How can I help?
+We are currently looking for people that have a BYD battery AND a GEN24 on hand. We are shipping logging devices with premade cables at our own cost to sniff RS485 communication between GEN24 and BYD batteries, so that we can reverse engineer and immitate the protocol.
+
+IF you have both, GEN24 + BYD we would be really happy to generate a logfile.
+
+# How does the logger work?
+Its a simple RS485 to USB converter. We are simply loggin the raw serial-data with timestamps added.
 
 # Supporting Links
 * https://keith-koep.com/en/products/products-trizeps/trizeps-viii-imx8-features/?gclid=CjwKCAjw-5v7BRAmEiwAJ3DpuPQ6A34wcfwYbqatG6AUj-NO5naHUnLqs9uFIsSlAf9oZhX7sAYQpxoCZ70QAvD_BwE
