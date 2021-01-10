@@ -1,0 +1,2531 @@
+{
+  "software": [
+    {
+      "hardwaregroup": "P10RW-pilot",
+      "0;0;": {
+        "INFOTEXT": "\"0;0;\" means HW-Compatibility 1 and Copy 0 is running; In /etc/hw-revision the information is saved in one line as hardwaregroup[space]HW-Comp;RunningCopy",
+        "images": [
+          {
+            "filename": "coyote-image-gen24-core-imx6sx-pilot.signed-rootfs.ubifs",
+            "type": "ubivol",
+            "volume": "rootfs_1",
+            "installed-directly": true,
+            "sha256": "25fda679d9bf74460c2bd5bbd11653621fb71c590390e64667a89ba291e4d18b",
+            "properties": {
+              "decrypted-size": "96501760"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "coyote-image-gen24-core-imx6sx-pilot.boot.ubifs",
+            "type": "ubivol",
+            "volume": "boot_1",
+            "installed-directly": true,
+            "sha256": "561d9056faf41291c016be09f887d86f29c8270f96c5ae1a4a4959a5678a8c0a",
+            "properties": {
+              "decrypted-size": "10919936"
+            },
+            "encrypted": true
+          }
+        ],
+        "scripts": [
+          {
+            "filename": "F10_copy_config.sh",
+            "type": "postinstall",
+            "sha256": "08702088909f22fcf0c36a47cd42d7bd6d865371e66220bfd50b67a8ad39b41b",
+            "properties": {
+              "decrypted-size": "601"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "F20_chmod_setupbundle.sh",
+            "type": "postinstall",
+            "sha256": "a5d256f4f05333822bb45e72152ffd2467dc69245b684df08bfb4da0fe9b58d1",
+            "properties": {
+              "decrypted-size": "287"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "F99_reboot.sh",
+            "type": "postinstall",
+            "sha256": "e4c720aec433b2c7398ddd43906af36a0291f7a9519e1dc7eddb5768709cd89b",
+            "properties": {
+              "decrypted-size": "1320"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "P00_check_reboot_lock.sh",
+            "type": "preinstall",
+            "sha256": "e8630fdfc1152967d754fc2ac73f9143e4b41147c3a3965239b259c002aee883",
+            "properties": {
+              "decrypted-size": "196"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "P04_disable_rollback.sh",
+            "type": "preinstall",
+            "sha256": "bdf86596694bce06e7d464fb30db3b6c88059e696e799d3c271f05cc590395de",
+            "properties": {
+              "decrypted-size": "78"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "P05_setup_mounts.sh",
+            "type": "preinstall",
+            "sha256": "971a967d6306635aaaf5bb36e7c9be1451b7d2c7b8d0e66e7c926bdbf4145325",
+            "properties": {
+              "decrypted-size": "1480"
+            },
+            "encrypted": true
+          }
+        ],
+        "files": [
+          {
+            "path": "/mnt/inactive/firmware/SystembusUpdateBundle.swu",
+            "sha256": "f1f472bb26264fbd259a957938ebfd9d2126be053713bde74ece1fa85e8484e4",
+            "filename": "SystembusUpdateBundle_20201007-135249.sig.swu"
+          },
+          {
+            "path": "/mnt/inactive/firmware/bundle.version",
+            "sha256": "dc9b415b0d9e071ba8b8b82062fff1283dbfcff5891ddc251caa8e4f86d16de1",
+            "filename": "bundle.version"
+          }
+        ],
+        "softwareversion": {
+          "id": "imx6sx-pilot",
+          "version": "1.7.5-1",
+          "checktype": "ge"
+        }
+      },
+      "0;1;": {
+        "images": [
+          {
+            "filename": "coyote-image-gen24-core-imx6sx-pilot.signed-rootfs.ubifs",
+            "type": "ubivol",
+            "volume": "rootfs_0",
+            "installed-directly": true,
+            "sha256": "25fda679d9bf74460c2bd5bbd11653621fb71c590390e64667a89ba291e4d18b",
+            "properties": {
+              "decrypted-size": "96501760"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "coyote-image-gen24-core-imx6sx-pilot.boot.ubifs",
+            "type": "ubivol",
+            "volume": "boot_0",
+            "installed-directly": true,
+            "sha256": "561d9056faf41291c016be09f887d86f29c8270f96c5ae1a4a4959a5678a8c0a",
+            "properties": {
+              "decrypted-size": "10919936"
+            },
+            "encrypted": true
+          }
+        ],
+        "scripts": [
+          {
+            "filename": "F10_copy_config.sh",
+            "type": "postinstall",
+            "sha256": "08702088909f22fcf0c36a47cd42d7bd6d865371e66220bfd50b67a8ad39b41b",
+            "properties": {
+              "decrypted-size": "601"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "F20_chmod_setupbundle.sh",
+            "type": "postinstall",
+            "sha256": "a5d256f4f05333822bb45e72152ffd2467dc69245b684df08bfb4da0fe9b58d1",
+            "properties": {
+              "decrypted-size": "287"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "F99_reboot.sh",
+            "type": "postinstall",
+            "sha256": "e4c720aec433b2c7398ddd43906af36a0291f7a9519e1dc7eddb5768709cd89b",
+            "properties": {
+              "decrypted-size": "1320"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "P00_check_reboot_lock.sh",
+            "type": "preinstall",
+            "sha256": "e8630fdfc1152967d754fc2ac73f9143e4b41147c3a3965239b259c002aee883",
+            "properties": {
+              "decrypted-size": "196"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "P04_disable_rollback.sh",
+            "type": "preinstall",
+            "sha256": "bdf86596694bce06e7d464fb30db3b6c88059e696e799d3c271f05cc590395de",
+            "properties": {
+              "decrypted-size": "78"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "P05_setup_mounts.sh",
+            "type": "preinstall",
+            "sha256": "971a967d6306635aaaf5bb36e7c9be1451b7d2c7b8d0e66e7c926bdbf4145325",
+            "properties": {
+              "decrypted-size": "1480"
+            },
+            "encrypted": true
+          }
+        ],
+        "files": [
+          {
+            "path": "/mnt/inactive/firmware/SystembusUpdateBundle.swu",
+            "sha256": "f1f472bb26264fbd259a957938ebfd9d2126be053713bde74ece1fa85e8484e4",
+            "filename": "SystembusUpdateBundle_20201007-135249.sig.swu"
+          },
+          {
+            "path": "/mnt/inactive/firmware/bundle.version",
+            "sha256": "dc9b415b0d9e071ba8b8b82062fff1283dbfcff5891ddc251caa8e4f86d16de1",
+            "filename": "bundle.version"
+          }
+        ],
+        "softwareversion": {
+          "id": "imx6sx-pilot",
+          "version": "1.7.5-1",
+          "checktype": "ge"
+        }
+      },
+      "softwareversion": {
+        "checktype": "ge",
+        "version": "1.10.5-0",
+        "id": "GEN24"
+      }
+    },
+    {
+      "hardwaregroup": "P10US-pilot",
+      "0;0;": {
+        "INFOTEXT": "\"0;0;\" means HW-Compatibility 1 and Copy 0 is running; In /etc/hw-revision the information is saved in one line as hardwaregroup[space]HW-Comp;RunningCopy",
+        "images": [
+          {
+            "filename": "coyote-image-gen24-core-imx6sx-pilot.signed-rootfs.ubifs",
+            "type": "ubivol",
+            "volume": "rootfs_1",
+            "installed-directly": true,
+            "sha256": "25fda679d9bf74460c2bd5bbd11653621fb71c590390e64667a89ba291e4d18b",
+            "properties": {
+              "decrypted-size": "96501760"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "coyote-image-gen24-core-imx6sx-pilot.boot.ubifs",
+            "type": "ubivol",
+            "volume": "boot_1",
+            "installed-directly": true,
+            "sha256": "561d9056faf41291c016be09f887d86f29c8270f96c5ae1a4a4959a5678a8c0a",
+            "properties": {
+              "decrypted-size": "10919936"
+            },
+            "encrypted": true
+          }
+        ],
+        "scripts": [
+          {
+            "filename": "F10_copy_config.sh",
+            "type": "postinstall",
+            "sha256": "08702088909f22fcf0c36a47cd42d7bd6d865371e66220bfd50b67a8ad39b41b",
+            "properties": {
+              "decrypted-size": "601"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "F20_chmod_setupbundle.sh",
+            "type": "postinstall",
+            "sha256": "a5d256f4f05333822bb45e72152ffd2467dc69245b684df08bfb4da0fe9b58d1",
+            "properties": {
+              "decrypted-size": "287"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "F99_reboot.sh",
+            "type": "postinstall",
+            "sha256": "e4c720aec433b2c7398ddd43906af36a0291f7a9519e1dc7eddb5768709cd89b",
+            "properties": {
+              "decrypted-size": "1320"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "P00_check_reboot_lock.sh",
+            "type": "preinstall",
+            "sha256": "e8630fdfc1152967d754fc2ac73f9143e4b41147c3a3965239b259c002aee883",
+            "properties": {
+              "decrypted-size": "196"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "P04_disable_rollback.sh",
+            "type": "preinstall",
+            "sha256": "bdf86596694bce06e7d464fb30db3b6c88059e696e799d3c271f05cc590395de",
+            "properties": {
+              "decrypted-size": "78"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "P05_setup_mounts.sh",
+            "type": "preinstall",
+            "sha256": "971a967d6306635aaaf5bb36e7c9be1451b7d2c7b8d0e66e7c926bdbf4145325",
+            "properties": {
+              "decrypted-size": "1480"
+            },
+            "encrypted": true
+          }
+        ],
+        "files": [
+          {
+            "path": "/mnt/inactive/firmware/SystembusUpdateBundle.swu",
+            "sha256": "f1f472bb26264fbd259a957938ebfd9d2126be053713bde74ece1fa85e8484e4",
+            "filename": "SystembusUpdateBundle_20201007-135249.sig.swu"
+          },
+          {
+            "path": "/mnt/inactive/firmware/bundle.version",
+            "sha256": "dc9b415b0d9e071ba8b8b82062fff1283dbfcff5891ddc251caa8e4f86d16de1",
+            "filename": "bundle.version"
+          }
+        ],
+        "softwareversion": {
+          "id": "imx6sx-pilot",
+          "version": "1.7.5-1",
+          "checktype": "ge"
+        }
+      },
+      "0;1;": {
+        "images": [
+          {
+            "filename": "coyote-image-gen24-core-imx6sx-pilot.signed-rootfs.ubifs",
+            "type": "ubivol",
+            "volume": "rootfs_0",
+            "installed-directly": true,
+            "sha256": "25fda679d9bf74460c2bd5bbd11653621fb71c590390e64667a89ba291e4d18b",
+            "properties": {
+              "decrypted-size": "96501760"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "coyote-image-gen24-core-imx6sx-pilot.boot.ubifs",
+            "type": "ubivol",
+            "volume": "boot_0",
+            "installed-directly": true,
+            "sha256": "561d9056faf41291c016be09f887d86f29c8270f96c5ae1a4a4959a5678a8c0a",
+            "properties": {
+              "decrypted-size": "10919936"
+            },
+            "encrypted": true
+          }
+        ],
+        "scripts": [
+          {
+            "filename": "F10_copy_config.sh",
+            "type": "postinstall",
+            "sha256": "08702088909f22fcf0c36a47cd42d7bd6d865371e66220bfd50b67a8ad39b41b",
+            "properties": {
+              "decrypted-size": "601"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "F20_chmod_setupbundle.sh",
+            "type": "postinstall",
+            "sha256": "a5d256f4f05333822bb45e72152ffd2467dc69245b684df08bfb4da0fe9b58d1",
+            "properties": {
+              "decrypted-size": "287"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "F99_reboot.sh",
+            "type": "postinstall",
+            "sha256": "e4c720aec433b2c7398ddd43906af36a0291f7a9519e1dc7eddb5768709cd89b",
+            "properties": {
+              "decrypted-size": "1320"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "P00_check_reboot_lock.sh",
+            "type": "preinstall",
+            "sha256": "e8630fdfc1152967d754fc2ac73f9143e4b41147c3a3965239b259c002aee883",
+            "properties": {
+              "decrypted-size": "196"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "P04_disable_rollback.sh",
+            "type": "preinstall",
+            "sha256": "bdf86596694bce06e7d464fb30db3b6c88059e696e799d3c271f05cc590395de",
+            "properties": {
+              "decrypted-size": "78"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "P05_setup_mounts.sh",
+            "type": "preinstall",
+            "sha256": "971a967d6306635aaaf5bb36e7c9be1451b7d2c7b8d0e66e7c926bdbf4145325",
+            "properties": {
+              "decrypted-size": "1480"
+            },
+            "encrypted": true
+          }
+        ],
+        "files": [
+          {
+            "path": "/mnt/inactive/firmware/SystembusUpdateBundle.swu",
+            "sha256": "f1f472bb26264fbd259a957938ebfd9d2126be053713bde74ece1fa85e8484e4",
+            "filename": "SystembusUpdateBundle_20201007-135249.sig.swu"
+          },
+          {
+            "path": "/mnt/inactive/firmware/bundle.version",
+            "sha256": "dc9b415b0d9e071ba8b8b82062fff1283dbfcff5891ddc251caa8e4f86d16de1",
+            "filename": "bundle.version"
+          }
+        ],
+        "softwareversion": {
+          "id": "imx6sx-pilot",
+          "version": "1.7.5-1",
+          "checktype": "ge"
+        }
+      },
+      "softwareversion": {
+        "checktype": "ge",
+        "version": "1.10.5-0",
+        "id": "GEN24"
+      }
+    },
+    {
+      "hardwaregroup": "P6RW-pilot",
+      "0;0;": {
+        "INFOTEXT": "\"0;0;\" means HW-Compatibility 1 and Copy 0 is running; In /etc/hw-revision the information is saved in one line as hardwaregroup[space]HW-Comp;RunningCopy",
+        "images": [
+          {
+            "filename": "coyote-image-gen24-core-imx6sx-pilot.signed-rootfs.ubifs",
+            "type": "ubivol",
+            "volume": "rootfs_1",
+            "installed-directly": true,
+            "sha256": "25fda679d9bf74460c2bd5bbd11653621fb71c590390e64667a89ba291e4d18b",
+            "properties": {
+              "decrypted-size": "96501760"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "coyote-image-gen24-core-imx6sx-pilot.boot.ubifs",
+            "type": "ubivol",
+            "volume": "boot_1",
+            "installed-directly": true,
+            "sha256": "561d9056faf41291c016be09f887d86f29c8270f96c5ae1a4a4959a5678a8c0a",
+            "properties": {
+              "decrypted-size": "10919936"
+            },
+            "encrypted": true
+          }
+        ],
+        "scripts": [
+          {
+            "filename": "F10_copy_config.sh",
+            "type": "postinstall",
+            "sha256": "08702088909f22fcf0c36a47cd42d7bd6d865371e66220bfd50b67a8ad39b41b",
+            "properties": {
+              "decrypted-size": "601"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "F20_chmod_setupbundle.sh",
+            "type": "postinstall",
+            "sha256": "a5d256f4f05333822bb45e72152ffd2467dc69245b684df08bfb4da0fe9b58d1",
+            "properties": {
+              "decrypted-size": "287"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "F99_reboot.sh",
+            "type": "postinstall",
+            "sha256": "e4c720aec433b2c7398ddd43906af36a0291f7a9519e1dc7eddb5768709cd89b",
+            "properties": {
+              "decrypted-size": "1320"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "P00_check_reboot_lock.sh",
+            "type": "preinstall",
+            "sha256": "e8630fdfc1152967d754fc2ac73f9143e4b41147c3a3965239b259c002aee883",
+            "properties": {
+              "decrypted-size": "196"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "P04_disable_rollback.sh",
+            "type": "preinstall",
+            "sha256": "bdf86596694bce06e7d464fb30db3b6c88059e696e799d3c271f05cc590395de",
+            "properties": {
+              "decrypted-size": "78"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "P05_setup_mounts.sh",
+            "type": "preinstall",
+            "sha256": "971a967d6306635aaaf5bb36e7c9be1451b7d2c7b8d0e66e7c926bdbf4145325",
+            "properties": {
+              "decrypted-size": "1480"
+            },
+            "encrypted": true
+          }
+        ],
+        "files": [
+          {
+            "path": "/mnt/inactive/firmware/SystembusUpdateBundle.swu",
+            "sha256": "f1f472bb26264fbd259a957938ebfd9d2126be053713bde74ece1fa85e8484e4",
+            "filename": "SystembusUpdateBundle_20201007-135249.sig.swu"
+          },
+          {
+            "path": "/mnt/inactive/firmware/bundle.version",
+            "sha256": "dc9b415b0d9e071ba8b8b82062fff1283dbfcff5891ddc251caa8e4f86d16de1",
+            "filename": "bundle.version"
+          }
+        ],
+        "softwareversion": {
+          "id": "imx6sx-pilot",
+          "version": "1.7.5-1",
+          "checktype": "ge"
+        }
+      },
+      "0;1;": {
+        "images": [
+          {
+            "filename": "coyote-image-gen24-core-imx6sx-pilot.signed-rootfs.ubifs",
+            "type": "ubivol",
+            "volume": "rootfs_0",
+            "installed-directly": true,
+            "sha256": "25fda679d9bf74460c2bd5bbd11653621fb71c590390e64667a89ba291e4d18b",
+            "properties": {
+              "decrypted-size": "96501760"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "coyote-image-gen24-core-imx6sx-pilot.boot.ubifs",
+            "type": "ubivol",
+            "volume": "boot_0",
+            "installed-directly": true,
+            "sha256": "561d9056faf41291c016be09f887d86f29c8270f96c5ae1a4a4959a5678a8c0a",
+            "properties": {
+              "decrypted-size": "10919936"
+            },
+            "encrypted": true
+          }
+        ],
+        "scripts": [
+          {
+            "filename": "F10_copy_config.sh",
+            "type": "postinstall",
+            "sha256": "08702088909f22fcf0c36a47cd42d7bd6d865371e66220bfd50b67a8ad39b41b",
+            "properties": {
+              "decrypted-size": "601"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "F20_chmod_setupbundle.sh",
+            "type": "postinstall",
+            "sha256": "a5d256f4f05333822bb45e72152ffd2467dc69245b684df08bfb4da0fe9b58d1",
+            "properties": {
+              "decrypted-size": "287"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "F99_reboot.sh",
+            "type": "postinstall",
+            "sha256": "e4c720aec433b2c7398ddd43906af36a0291f7a9519e1dc7eddb5768709cd89b",
+            "properties": {
+              "decrypted-size": "1320"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "P00_check_reboot_lock.sh",
+            "type": "preinstall",
+            "sha256": "e8630fdfc1152967d754fc2ac73f9143e4b41147c3a3965239b259c002aee883",
+            "properties": {
+              "decrypted-size": "196"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "P04_disable_rollback.sh",
+            "type": "preinstall",
+            "sha256": "bdf86596694bce06e7d464fb30db3b6c88059e696e799d3c271f05cc590395de",
+            "properties": {
+              "decrypted-size": "78"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "P05_setup_mounts.sh",
+            "type": "preinstall",
+            "sha256": "971a967d6306635aaaf5bb36e7c9be1451b7d2c7b8d0e66e7c926bdbf4145325",
+            "properties": {
+              "decrypted-size": "1480"
+            },
+            "encrypted": true
+          }
+        ],
+        "files": [
+          {
+            "path": "/mnt/inactive/firmware/SystembusUpdateBundle.swu",
+            "sha256": "f1f472bb26264fbd259a957938ebfd9d2126be053713bde74ece1fa85e8484e4",
+            "filename": "SystembusUpdateBundle_20201007-135249.sig.swu"
+          },
+          {
+            "path": "/mnt/inactive/firmware/bundle.version",
+            "sha256": "dc9b415b0d9e071ba8b8b82062fff1283dbfcff5891ddc251caa8e4f86d16de1",
+            "filename": "bundle.version"
+          }
+        ],
+        "softwareversion": {
+          "id": "imx6sx-pilot",
+          "version": "1.7.5-1",
+          "checktype": "ge"
+        }
+      },
+      "softwareversion": {
+        "checktype": "ge",
+        "version": "1.10.5-0",
+        "id": "GEN24"
+      }
+    },
+    {
+      "hardwaregroup": "P6US-pilot",
+      "0;0;": {
+        "INFOTEXT": "\"0;0;\" means HW-Compatibility 1 and Copy 0 is running; In /etc/hw-revision the information is saved in one line as hardwaregroup[space]HW-Comp;RunningCopy",
+        "images": [
+          {
+            "filename": "coyote-image-gen24-core-imx6sx-pilot.signed-rootfs.ubifs",
+            "type": "ubivol",
+            "volume": "rootfs_1",
+            "installed-directly": true,
+            "sha256": "25fda679d9bf74460c2bd5bbd11653621fb71c590390e64667a89ba291e4d18b",
+            "properties": {
+              "decrypted-size": "96501760"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "coyote-image-gen24-core-imx6sx-pilot.boot.ubifs",
+            "type": "ubivol",
+            "volume": "boot_1",
+            "installed-directly": true,
+            "sha256": "561d9056faf41291c016be09f887d86f29c8270f96c5ae1a4a4959a5678a8c0a",
+            "properties": {
+              "decrypted-size": "10919936"
+            },
+            "encrypted": true
+          }
+        ],
+        "scripts": [
+          {
+            "filename": "F10_copy_config.sh",
+            "type": "postinstall",
+            "sha256": "08702088909f22fcf0c36a47cd42d7bd6d865371e66220bfd50b67a8ad39b41b",
+            "properties": {
+              "decrypted-size": "601"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "F20_chmod_setupbundle.sh",
+            "type": "postinstall",
+            "sha256": "a5d256f4f05333822bb45e72152ffd2467dc69245b684df08bfb4da0fe9b58d1",
+            "properties": {
+              "decrypted-size": "287"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "F99_reboot.sh",
+            "type": "postinstall",
+            "sha256": "e4c720aec433b2c7398ddd43906af36a0291f7a9519e1dc7eddb5768709cd89b",
+            "properties": {
+              "decrypted-size": "1320"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "P00_check_reboot_lock.sh",
+            "type": "preinstall",
+            "sha256": "e8630fdfc1152967d754fc2ac73f9143e4b41147c3a3965239b259c002aee883",
+            "properties": {
+              "decrypted-size": "196"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "P04_disable_rollback.sh",
+            "type": "preinstall",
+            "sha256": "bdf86596694bce06e7d464fb30db3b6c88059e696e799d3c271f05cc590395de",
+            "properties": {
+              "decrypted-size": "78"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "P05_setup_mounts.sh",
+            "type": "preinstall",
+            "sha256": "971a967d6306635aaaf5bb36e7c9be1451b7d2c7b8d0e66e7c926bdbf4145325",
+            "properties": {
+              "decrypted-size": "1480"
+            },
+            "encrypted": true
+          }
+        ],
+        "files": [
+          {
+            "path": "/mnt/inactive/firmware/SystembusUpdateBundle.swu",
+            "sha256": "f1f472bb26264fbd259a957938ebfd9d2126be053713bde74ece1fa85e8484e4",
+            "filename": "SystembusUpdateBundle_20201007-135249.sig.swu"
+          },
+          {
+            "path": "/mnt/inactive/firmware/bundle.version",
+            "sha256": "dc9b415b0d9e071ba8b8b82062fff1283dbfcff5891ddc251caa8e4f86d16de1",
+            "filename": "bundle.version"
+          }
+        ],
+        "softwareversion": {
+          "id": "imx6sx-pilot",
+          "version": "1.7.5-1",
+          "checktype": "ge"
+        }
+      },
+      "0;1;": {
+        "images": [
+          {
+            "filename": "coyote-image-gen24-core-imx6sx-pilot.signed-rootfs.ubifs",
+            "type": "ubivol",
+            "volume": "rootfs_0",
+            "installed-directly": true,
+            "sha256": "25fda679d9bf74460c2bd5bbd11653621fb71c590390e64667a89ba291e4d18b",
+            "properties": {
+              "decrypted-size": "96501760"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "coyote-image-gen24-core-imx6sx-pilot.boot.ubifs",
+            "type": "ubivol",
+            "volume": "boot_0",
+            "installed-directly": true,
+            "sha256": "561d9056faf41291c016be09f887d86f29c8270f96c5ae1a4a4959a5678a8c0a",
+            "properties": {
+              "decrypted-size": "10919936"
+            },
+            "encrypted": true
+          }
+        ],
+        "scripts": [
+          {
+            "filename": "F10_copy_config.sh",
+            "type": "postinstall",
+            "sha256": "08702088909f22fcf0c36a47cd42d7bd6d865371e66220bfd50b67a8ad39b41b",
+            "properties": {
+              "decrypted-size": "601"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "F20_chmod_setupbundle.sh",
+            "type": "postinstall",
+            "sha256": "a5d256f4f05333822bb45e72152ffd2467dc69245b684df08bfb4da0fe9b58d1",
+            "properties": {
+              "decrypted-size": "287"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "F99_reboot.sh",
+            "type": "postinstall",
+            "sha256": "e4c720aec433b2c7398ddd43906af36a0291f7a9519e1dc7eddb5768709cd89b",
+            "properties": {
+              "decrypted-size": "1320"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "P00_check_reboot_lock.sh",
+            "type": "preinstall",
+            "sha256": "e8630fdfc1152967d754fc2ac73f9143e4b41147c3a3965239b259c002aee883",
+            "properties": {
+              "decrypted-size": "196"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "P04_disable_rollback.sh",
+            "type": "preinstall",
+            "sha256": "bdf86596694bce06e7d464fb30db3b6c88059e696e799d3c271f05cc590395de",
+            "properties": {
+              "decrypted-size": "78"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "P05_setup_mounts.sh",
+            "type": "preinstall",
+            "sha256": "971a967d6306635aaaf5bb36e7c9be1451b7d2c7b8d0e66e7c926bdbf4145325",
+            "properties": {
+              "decrypted-size": "1480"
+            },
+            "encrypted": true
+          }
+        ],
+        "files": [
+          {
+            "path": "/mnt/inactive/firmware/SystembusUpdateBundle.swu",
+            "sha256": "f1f472bb26264fbd259a957938ebfd9d2126be053713bde74ece1fa85e8484e4",
+            "filename": "SystembusUpdateBundle_20201007-135249.sig.swu"
+          },
+          {
+            "path": "/mnt/inactive/firmware/bundle.version",
+            "sha256": "dc9b415b0d9e071ba8b8b82062fff1283dbfcff5891ddc251caa8e4f86d16de1",
+            "filename": "bundle.version"
+          }
+        ],
+        "softwareversion": {
+          "id": "imx6sx-pilot",
+          "version": "1.7.5-1",
+          "checktype": "ge"
+        }
+      },
+      "softwareversion": {
+        "checktype": "ge",
+        "version": "1.10.5-0",
+        "id": "GEN24"
+      }
+    },
+    {
+      "hardwaregroup": "S10RW-pilot",
+      "0;0;": {
+        "INFOTEXT": "\"0;0;\" means HW-Compatibility 1 and Copy 0 is running; In /etc/hw-revision the information is saved in one line as hardwaregroup[space]HW-Comp;RunningCopy",
+        "images": [
+          {
+            "filename": "coyote-image-gen24-core-imx6sx-pilot.signed-rootfs.ubifs",
+            "type": "ubivol",
+            "volume": "rootfs_1",
+            "installed-directly": true,
+            "sha256": "25fda679d9bf74460c2bd5bbd11653621fb71c590390e64667a89ba291e4d18b",
+            "properties": {
+              "decrypted-size": "96501760"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "coyote-image-gen24-core-imx6sx-pilot.boot.ubifs",
+            "type": "ubivol",
+            "volume": "boot_1",
+            "installed-directly": true,
+            "sha256": "561d9056faf41291c016be09f887d86f29c8270f96c5ae1a4a4959a5678a8c0a",
+            "properties": {
+              "decrypted-size": "10919936"
+            },
+            "encrypted": true
+          }
+        ],
+        "scripts": [
+          {
+            "filename": "F10_copy_config.sh",
+            "type": "postinstall",
+            "sha256": "08702088909f22fcf0c36a47cd42d7bd6d865371e66220bfd50b67a8ad39b41b",
+            "properties": {
+              "decrypted-size": "601"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "F20_chmod_setupbundle.sh",
+            "type": "postinstall",
+            "sha256": "a5d256f4f05333822bb45e72152ffd2467dc69245b684df08bfb4da0fe9b58d1",
+            "properties": {
+              "decrypted-size": "287"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "F99_reboot.sh",
+            "type": "postinstall",
+            "sha256": "e4c720aec433b2c7398ddd43906af36a0291f7a9519e1dc7eddb5768709cd89b",
+            "properties": {
+              "decrypted-size": "1320"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "P00_check_reboot_lock.sh",
+            "type": "preinstall",
+            "sha256": "e8630fdfc1152967d754fc2ac73f9143e4b41147c3a3965239b259c002aee883",
+            "properties": {
+              "decrypted-size": "196"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "P04_disable_rollback.sh",
+            "type": "preinstall",
+            "sha256": "bdf86596694bce06e7d464fb30db3b6c88059e696e799d3c271f05cc590395de",
+            "properties": {
+              "decrypted-size": "78"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "P05_setup_mounts.sh",
+            "type": "preinstall",
+            "sha256": "971a967d6306635aaaf5bb36e7c9be1451b7d2c7b8d0e66e7c926bdbf4145325",
+            "properties": {
+              "decrypted-size": "1480"
+            },
+            "encrypted": true
+          }
+        ],
+        "files": [
+          {
+            "path": "/mnt/inactive/firmware/SystembusUpdateBundle.swu",
+            "sha256": "f1f472bb26264fbd259a957938ebfd9d2126be053713bde74ece1fa85e8484e4",
+            "filename": "SystembusUpdateBundle_20201007-135249.sig.swu"
+          },
+          {
+            "path": "/mnt/inactive/firmware/bundle.version",
+            "sha256": "dc9b415b0d9e071ba8b8b82062fff1283dbfcff5891ddc251caa8e4f86d16de1",
+            "filename": "bundle.version"
+          }
+        ],
+        "softwareversion": {
+          "id": "imx6sx-pilot",
+          "version": "1.7.5-1",
+          "checktype": "ge"
+        }
+      },
+      "0;1;": {
+        "images": [
+          {
+            "filename": "coyote-image-gen24-core-imx6sx-pilot.signed-rootfs.ubifs",
+            "type": "ubivol",
+            "volume": "rootfs_0",
+            "installed-directly": true,
+            "sha256": "25fda679d9bf74460c2bd5bbd11653621fb71c590390e64667a89ba291e4d18b",
+            "properties": {
+              "decrypted-size": "96501760"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "coyote-image-gen24-core-imx6sx-pilot.boot.ubifs",
+            "type": "ubivol",
+            "volume": "boot_0",
+            "installed-directly": true,
+            "sha256": "561d9056faf41291c016be09f887d86f29c8270f96c5ae1a4a4959a5678a8c0a",
+            "properties": {
+              "decrypted-size": "10919936"
+            },
+            "encrypted": true
+          }
+        ],
+        "scripts": [
+          {
+            "filename": "F10_copy_config.sh",
+            "type": "postinstall",
+            "sha256": "08702088909f22fcf0c36a47cd42d7bd6d865371e66220bfd50b67a8ad39b41b",
+            "properties": {
+              "decrypted-size": "601"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "F20_chmod_setupbundle.sh",
+            "type": "postinstall",
+            "sha256": "a5d256f4f05333822bb45e72152ffd2467dc69245b684df08bfb4da0fe9b58d1",
+            "properties": {
+              "decrypted-size": "287"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "F99_reboot.sh",
+            "type": "postinstall",
+            "sha256": "e4c720aec433b2c7398ddd43906af36a0291f7a9519e1dc7eddb5768709cd89b",
+            "properties": {
+              "decrypted-size": "1320"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "P00_check_reboot_lock.sh",
+            "type": "preinstall",
+            "sha256": "e8630fdfc1152967d754fc2ac73f9143e4b41147c3a3965239b259c002aee883",
+            "properties": {
+              "decrypted-size": "196"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "P04_disable_rollback.sh",
+            "type": "preinstall",
+            "sha256": "bdf86596694bce06e7d464fb30db3b6c88059e696e799d3c271f05cc590395de",
+            "properties": {
+              "decrypted-size": "78"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "P05_setup_mounts.sh",
+            "type": "preinstall",
+            "sha256": "971a967d6306635aaaf5bb36e7c9be1451b7d2c7b8d0e66e7c926bdbf4145325",
+            "properties": {
+              "decrypted-size": "1480"
+            },
+            "encrypted": true
+          }
+        ],
+        "files": [
+          {
+            "path": "/mnt/inactive/firmware/SystembusUpdateBundle.swu",
+            "sha256": "f1f472bb26264fbd259a957938ebfd9d2126be053713bde74ece1fa85e8484e4",
+            "filename": "SystembusUpdateBundle_20201007-135249.sig.swu"
+          },
+          {
+            "path": "/mnt/inactive/firmware/bundle.version",
+            "sha256": "dc9b415b0d9e071ba8b8b82062fff1283dbfcff5891ddc251caa8e4f86d16de1",
+            "filename": "bundle.version"
+          }
+        ],
+        "softwareversion": {
+          "id": "imx6sx-pilot",
+          "version": "1.7.5-1",
+          "checktype": "ge"
+        }
+      },
+      "softwareversion": {
+        "checktype": "ge",
+        "version": "1.10.5-0",
+        "id": "GEN24"
+      }
+    },
+    {
+      "hardwaregroup": "S5RW-pilot",
+      "0;0;": {
+        "INFOTEXT": "\"0;0;\" means HW-Compatibility 1 and Copy 0 is running; In /etc/hw-revision the information is saved in one line as hardwaregroup[space]HW-Comp;RunningCopy",
+        "images": [
+          {
+            "filename": "coyote-image-gen24-core-imx6sx-pilot.signed-rootfs.ubifs",
+            "type": "ubivol",
+            "volume": "rootfs_1",
+            "installed-directly": true,
+            "sha256": "25fda679d9bf74460c2bd5bbd11653621fb71c590390e64667a89ba291e4d18b",
+            "properties": {
+              "decrypted-size": "96501760"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "coyote-image-gen24-core-imx6sx-pilot.boot.ubifs",
+            "type": "ubivol",
+            "volume": "boot_1",
+            "installed-directly": true,
+            "sha256": "561d9056faf41291c016be09f887d86f29c8270f96c5ae1a4a4959a5678a8c0a",
+            "properties": {
+              "decrypted-size": "10919936"
+            },
+            "encrypted": true
+          }
+        ],
+        "scripts": [
+          {
+            "filename": "F10_copy_config.sh",
+            "type": "postinstall",
+            "sha256": "08702088909f22fcf0c36a47cd42d7bd6d865371e66220bfd50b67a8ad39b41b",
+            "properties": {
+              "decrypted-size": "601"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "F20_chmod_setupbundle.sh",
+            "type": "postinstall",
+            "sha256": "a5d256f4f05333822bb45e72152ffd2467dc69245b684df08bfb4da0fe9b58d1",
+            "properties": {
+              "decrypted-size": "287"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "F99_reboot.sh",
+            "type": "postinstall",
+            "sha256": "e4c720aec433b2c7398ddd43906af36a0291f7a9519e1dc7eddb5768709cd89b",
+            "properties": {
+              "decrypted-size": "1320"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "P00_check_reboot_lock.sh",
+            "type": "preinstall",
+            "sha256": "e8630fdfc1152967d754fc2ac73f9143e4b41147c3a3965239b259c002aee883",
+            "properties": {
+              "decrypted-size": "196"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "P04_disable_rollback.sh",
+            "type": "preinstall",
+            "sha256": "bdf86596694bce06e7d464fb30db3b6c88059e696e799d3c271f05cc590395de",
+            "properties": {
+              "decrypted-size": "78"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "P05_setup_mounts.sh",
+            "type": "preinstall",
+            "sha256": "971a967d6306635aaaf5bb36e7c9be1451b7d2c7b8d0e66e7c926bdbf4145325",
+            "properties": {
+              "decrypted-size": "1480"
+            },
+            "encrypted": true
+          }
+        ],
+        "files": [
+          {
+            "path": "/mnt/inactive/firmware/SystembusUpdateBundle.swu",
+            "sha256": "f1f472bb26264fbd259a957938ebfd9d2126be053713bde74ece1fa85e8484e4",
+            "filename": "SystembusUpdateBundle_20201007-135249.sig.swu"
+          },
+          {
+            "path": "/mnt/inactive/firmware/bundle.version",
+            "sha256": "dc9b415b0d9e071ba8b8b82062fff1283dbfcff5891ddc251caa8e4f86d16de1",
+            "filename": "bundle.version"
+          }
+        ],
+        "softwareversion": {
+          "id": "imx6sx-pilot",
+          "version": "1.7.5-1",
+          "checktype": "ge"
+        }
+      },
+      "0;1;": {
+        "images": [
+          {
+            "filename": "coyote-image-gen24-core-imx6sx-pilot.signed-rootfs.ubifs",
+            "type": "ubivol",
+            "volume": "rootfs_0",
+            "installed-directly": true,
+            "sha256": "25fda679d9bf74460c2bd5bbd11653621fb71c590390e64667a89ba291e4d18b",
+            "properties": {
+              "decrypted-size": "96501760"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "coyote-image-gen24-core-imx6sx-pilot.boot.ubifs",
+            "type": "ubivol",
+            "volume": "boot_0",
+            "installed-directly": true,
+            "sha256": "561d9056faf41291c016be09f887d86f29c8270f96c5ae1a4a4959a5678a8c0a",
+            "properties": {
+              "decrypted-size": "10919936"
+            },
+            "encrypted": true
+          }
+        ],
+        "scripts": [
+          {
+            "filename": "F10_copy_config.sh",
+            "type": "postinstall",
+            "sha256": "08702088909f22fcf0c36a47cd42d7bd6d865371e66220bfd50b67a8ad39b41b",
+            "properties": {
+              "decrypted-size": "601"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "F20_chmod_setupbundle.sh",
+            "type": "postinstall",
+            "sha256": "a5d256f4f05333822bb45e72152ffd2467dc69245b684df08bfb4da0fe9b58d1",
+            "properties": {
+              "decrypted-size": "287"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "F99_reboot.sh",
+            "type": "postinstall",
+            "sha256": "e4c720aec433b2c7398ddd43906af36a0291f7a9519e1dc7eddb5768709cd89b",
+            "properties": {
+              "decrypted-size": "1320"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "P00_check_reboot_lock.sh",
+            "type": "preinstall",
+            "sha256": "e8630fdfc1152967d754fc2ac73f9143e4b41147c3a3965239b259c002aee883",
+            "properties": {
+              "decrypted-size": "196"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "P04_disable_rollback.sh",
+            "type": "preinstall",
+            "sha256": "bdf86596694bce06e7d464fb30db3b6c88059e696e799d3c271f05cc590395de",
+            "properties": {
+              "decrypted-size": "78"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "P05_setup_mounts.sh",
+            "type": "preinstall",
+            "sha256": "971a967d6306635aaaf5bb36e7c9be1451b7d2c7b8d0e66e7c926bdbf4145325",
+            "properties": {
+              "decrypted-size": "1480"
+            },
+            "encrypted": true
+          }
+        ],
+        "files": [
+          {
+            "path": "/mnt/inactive/firmware/SystembusUpdateBundle.swu",
+            "sha256": "f1f472bb26264fbd259a957938ebfd9d2126be053713bde74ece1fa85e8484e4",
+            "filename": "SystembusUpdateBundle_20201007-135249.sig.swu"
+          },
+          {
+            "path": "/mnt/inactive/firmware/bundle.version",
+            "sha256": "dc9b415b0d9e071ba8b8b82062fff1283dbfcff5891ddc251caa8e4f86d16de1",
+            "filename": "bundle.version"
+          }
+        ],
+        "softwareversion": {
+          "id": "imx6sx-pilot",
+          "version": "1.7.5-1",
+          "checktype": "ge"
+        }
+      },
+      "softwareversion": {
+        "checktype": "ge",
+        "version": "1.10.5-0",
+        "id": "GEN24"
+      }
+    },
+    {
+      "hardwaregroup": "TB50RW-pilot",
+      "0;0;": {
+        "INFOTEXT": "\"0;0;\" means HW-Compatibility 1 and Copy 0 is running; In /etc/hw-revision the information is saved in one line as hardwaregroup[space]HW-Comp;RunningCopy",
+        "images": [
+          {
+            "filename": "coyote-image-gen24-core-imx6sx-pilot.signed-rootfs.ubifs",
+            "type": "ubivol",
+            "volume": "rootfs_1",
+            "installed-directly": true,
+            "sha256": "25fda679d9bf74460c2bd5bbd11653621fb71c590390e64667a89ba291e4d18b",
+            "properties": {
+              "decrypted-size": "96501760"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "coyote-image-gen24-core-imx6sx-pilot.boot.ubifs",
+            "type": "ubivol",
+            "volume": "boot_1",
+            "installed-directly": true,
+            "sha256": "561d9056faf41291c016be09f887d86f29c8270f96c5ae1a4a4959a5678a8c0a",
+            "properties": {
+              "decrypted-size": "10919936"
+            },
+            "encrypted": true
+          }
+        ],
+        "scripts": [
+          {
+            "filename": "F10_copy_config.sh",
+            "type": "postinstall",
+            "sha256": "08702088909f22fcf0c36a47cd42d7bd6d865371e66220bfd50b67a8ad39b41b",
+            "properties": {
+              "decrypted-size": "601"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "F20_chmod_setupbundle.sh",
+            "type": "postinstall",
+            "sha256": "a5d256f4f05333822bb45e72152ffd2467dc69245b684df08bfb4da0fe9b58d1",
+            "properties": {
+              "decrypted-size": "287"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "F99_reboot.sh",
+            "type": "postinstall",
+            "sha256": "e4c720aec433b2c7398ddd43906af36a0291f7a9519e1dc7eddb5768709cd89b",
+            "properties": {
+              "decrypted-size": "1320"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "P00_check_reboot_lock.sh",
+            "type": "preinstall",
+            "sha256": "e8630fdfc1152967d754fc2ac73f9143e4b41147c3a3965239b259c002aee883",
+            "properties": {
+              "decrypted-size": "196"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "P04_disable_rollback.sh",
+            "type": "preinstall",
+            "sha256": "bdf86596694bce06e7d464fb30db3b6c88059e696e799d3c271f05cc590395de",
+            "properties": {
+              "decrypted-size": "78"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "P05_setup_mounts.sh",
+            "type": "preinstall",
+            "sha256": "971a967d6306635aaaf5bb36e7c9be1451b7d2c7b8d0e66e7c926bdbf4145325",
+            "properties": {
+              "decrypted-size": "1480"
+            },
+            "encrypted": true
+          }
+        ],
+        "files": [
+          {
+            "path": "/mnt/inactive/firmware/SystembusUpdateBundle.swu",
+            "sha256": "f1f472bb26264fbd259a957938ebfd9d2126be053713bde74ece1fa85e8484e4",
+            "filename": "SystembusUpdateBundle_20201007-135249.sig.swu"
+          },
+          {
+            "path": "/mnt/inactive/firmware/bundle.version",
+            "sha256": "dc9b415b0d9e071ba8b8b82062fff1283dbfcff5891ddc251caa8e4f86d16de1",
+            "filename": "bundle.version"
+          }
+        ],
+        "softwareversion": {
+          "id": "imx6sx-pilot",
+          "version": "1.7.5-1",
+          "checktype": "ge"
+        }
+      },
+      "0;1;": {
+        "images": [
+          {
+            "filename": "coyote-image-gen24-core-imx6sx-pilot.signed-rootfs.ubifs",
+            "type": "ubivol",
+            "volume": "rootfs_0",
+            "installed-directly": true,
+            "sha256": "25fda679d9bf74460c2bd5bbd11653621fb71c590390e64667a89ba291e4d18b",
+            "properties": {
+              "decrypted-size": "96501760"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "coyote-image-gen24-core-imx6sx-pilot.boot.ubifs",
+            "type": "ubivol",
+            "volume": "boot_0",
+            "installed-directly": true,
+            "sha256": "561d9056faf41291c016be09f887d86f29c8270f96c5ae1a4a4959a5678a8c0a",
+            "properties": {
+              "decrypted-size": "10919936"
+            },
+            "encrypted": true
+          }
+        ],
+        "scripts": [
+          {
+            "filename": "F10_copy_config.sh",
+            "type": "postinstall",
+            "sha256": "08702088909f22fcf0c36a47cd42d7bd6d865371e66220bfd50b67a8ad39b41b",
+            "properties": {
+              "decrypted-size": "601"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "F20_chmod_setupbundle.sh",
+            "type": "postinstall",
+            "sha256": "a5d256f4f05333822bb45e72152ffd2467dc69245b684df08bfb4da0fe9b58d1",
+            "properties": {
+              "decrypted-size": "287"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "F99_reboot.sh",
+            "type": "postinstall",
+            "sha256": "e4c720aec433b2c7398ddd43906af36a0291f7a9519e1dc7eddb5768709cd89b",
+            "properties": {
+              "decrypted-size": "1320"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "P00_check_reboot_lock.sh",
+            "type": "preinstall",
+            "sha256": "e8630fdfc1152967d754fc2ac73f9143e4b41147c3a3965239b259c002aee883",
+            "properties": {
+              "decrypted-size": "196"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "P04_disable_rollback.sh",
+            "type": "preinstall",
+            "sha256": "bdf86596694bce06e7d464fb30db3b6c88059e696e799d3c271f05cc590395de",
+            "properties": {
+              "decrypted-size": "78"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "P05_setup_mounts.sh",
+            "type": "preinstall",
+            "sha256": "971a967d6306635aaaf5bb36e7c9be1451b7d2c7b8d0e66e7c926bdbf4145325",
+            "properties": {
+              "decrypted-size": "1480"
+            },
+            "encrypted": true
+          }
+        ],
+        "files": [
+          {
+            "path": "/mnt/inactive/firmware/SystembusUpdateBundle.swu",
+            "sha256": "f1f472bb26264fbd259a957938ebfd9d2126be053713bde74ece1fa85e8484e4",
+            "filename": "SystembusUpdateBundle_20201007-135249.sig.swu"
+          },
+          {
+            "path": "/mnt/inactive/firmware/bundle.version",
+            "sha256": "dc9b415b0d9e071ba8b8b82062fff1283dbfcff5891ddc251caa8e4f86d16de1",
+            "filename": "bundle.version"
+          }
+        ],
+        "softwareversion": {
+          "id": "imx6sx-pilot",
+          "version": "1.7.5-1",
+          "checktype": "ge"
+        }
+      },
+      "softwareversion": {
+        "checktype": "ge",
+        "version": "1.10.5-0",
+        "id": "GEN24"
+      }
+    },
+    {
+      "hardwaregroup": "TBP50RW-pilot",
+      "0;0;": {
+        "INFOTEXT": "\"0;0;\" means HW-Compatibility 1 and Copy 0 is running; In /etc/hw-revision the information is saved in one line as hardwaregroup[space]HW-Comp;RunningCopy",
+        "images": [
+          {
+            "filename": "coyote-image-gen24-core-imx6sx-pilot.signed-rootfs.ubifs",
+            "type": "ubivol",
+            "volume": "rootfs_1",
+            "installed-directly": true,
+            "sha256": "25fda679d9bf74460c2bd5bbd11653621fb71c590390e64667a89ba291e4d18b",
+            "properties": {
+              "decrypted-size": "96501760"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "coyote-image-gen24-core-imx6sx-pilot.boot.ubifs",
+            "type": "ubivol",
+            "volume": "boot_1",
+            "installed-directly": true,
+            "sha256": "561d9056faf41291c016be09f887d86f29c8270f96c5ae1a4a4959a5678a8c0a",
+            "properties": {
+              "decrypted-size": "10919936"
+            },
+            "encrypted": true
+          }
+        ],
+        "scripts": [
+          {
+            "filename": "F10_copy_config.sh",
+            "type": "postinstall",
+            "sha256": "08702088909f22fcf0c36a47cd42d7bd6d865371e66220bfd50b67a8ad39b41b",
+            "properties": {
+              "decrypted-size": "601"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "F20_chmod_setupbundle.sh",
+            "type": "postinstall",
+            "sha256": "a5d256f4f05333822bb45e72152ffd2467dc69245b684df08bfb4da0fe9b58d1",
+            "properties": {
+              "decrypted-size": "287"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "F99_reboot.sh",
+            "type": "postinstall",
+            "sha256": "e4c720aec433b2c7398ddd43906af36a0291f7a9519e1dc7eddb5768709cd89b",
+            "properties": {
+              "decrypted-size": "1320"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "P00_check_reboot_lock.sh",
+            "type": "preinstall",
+            "sha256": "e8630fdfc1152967d754fc2ac73f9143e4b41147c3a3965239b259c002aee883",
+            "properties": {
+              "decrypted-size": "196"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "P04_disable_rollback.sh",
+            "type": "preinstall",
+            "sha256": "bdf86596694bce06e7d464fb30db3b6c88059e696e799d3c271f05cc590395de",
+            "properties": {
+              "decrypted-size": "78"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "P05_setup_mounts.sh",
+            "type": "preinstall",
+            "sha256": "971a967d6306635aaaf5bb36e7c9be1451b7d2c7b8d0e66e7c926bdbf4145325",
+            "properties": {
+              "decrypted-size": "1480"
+            },
+            "encrypted": true
+          }
+        ],
+        "files": [
+          {
+            "path": "/mnt/inactive/firmware/SystembusUpdateBundle.swu",
+            "sha256": "f1f472bb26264fbd259a957938ebfd9d2126be053713bde74ece1fa85e8484e4",
+            "filename": "SystembusUpdateBundle_20201007-135249.sig.swu"
+          },
+          {
+            "path": "/mnt/inactive/firmware/bundle.version",
+            "sha256": "dc9b415b0d9e071ba8b8b82062fff1283dbfcff5891ddc251caa8e4f86d16de1",
+            "filename": "bundle.version"
+          }
+        ],
+        "softwareversion": {
+          "id": "imx6sx-pilot",
+          "version": "1.7.5-1",
+          "checktype": "ge"
+        }
+      },
+      "0;1;": {
+        "images": [
+          {
+            "filename": "coyote-image-gen24-core-imx6sx-pilot.signed-rootfs.ubifs",
+            "type": "ubivol",
+            "volume": "rootfs_0",
+            "installed-directly": true,
+            "sha256": "25fda679d9bf74460c2bd5bbd11653621fb71c590390e64667a89ba291e4d18b",
+            "properties": {
+              "decrypted-size": "96501760"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "coyote-image-gen24-core-imx6sx-pilot.boot.ubifs",
+            "type": "ubivol",
+            "volume": "boot_0",
+            "installed-directly": true,
+            "sha256": "561d9056faf41291c016be09f887d86f29c8270f96c5ae1a4a4959a5678a8c0a",
+            "properties": {
+              "decrypted-size": "10919936"
+            },
+            "encrypted": true
+          }
+        ],
+        "scripts": [
+          {
+            "filename": "F10_copy_config.sh",
+            "type": "postinstall",
+            "sha256": "08702088909f22fcf0c36a47cd42d7bd6d865371e66220bfd50b67a8ad39b41b",
+            "properties": {
+              "decrypted-size": "601"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "F20_chmod_setupbundle.sh",
+            "type": "postinstall",
+            "sha256": "a5d256f4f05333822bb45e72152ffd2467dc69245b684df08bfb4da0fe9b58d1",
+            "properties": {
+              "decrypted-size": "287"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "F99_reboot.sh",
+            "type": "postinstall",
+            "sha256": "e4c720aec433b2c7398ddd43906af36a0291f7a9519e1dc7eddb5768709cd89b",
+            "properties": {
+              "decrypted-size": "1320"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "P00_check_reboot_lock.sh",
+            "type": "preinstall",
+            "sha256": "e8630fdfc1152967d754fc2ac73f9143e4b41147c3a3965239b259c002aee883",
+            "properties": {
+              "decrypted-size": "196"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "P04_disable_rollback.sh",
+            "type": "preinstall",
+            "sha256": "bdf86596694bce06e7d464fb30db3b6c88059e696e799d3c271f05cc590395de",
+            "properties": {
+              "decrypted-size": "78"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "P05_setup_mounts.sh",
+            "type": "preinstall",
+            "sha256": "971a967d6306635aaaf5bb36e7c9be1451b7d2c7b8d0e66e7c926bdbf4145325",
+            "properties": {
+              "decrypted-size": "1480"
+            },
+            "encrypted": true
+          }
+        ],
+        "files": [
+          {
+            "path": "/mnt/inactive/firmware/SystembusUpdateBundle.swu",
+            "sha256": "f1f472bb26264fbd259a957938ebfd9d2126be053713bde74ece1fa85e8484e4",
+            "filename": "SystembusUpdateBundle_20201007-135249.sig.swu"
+          },
+          {
+            "path": "/mnt/inactive/firmware/bundle.version",
+            "sha256": "dc9b415b0d9e071ba8b8b82062fff1283dbfcff5891ddc251caa8e4f86d16de1",
+            "filename": "bundle.version"
+          }
+        ],
+        "softwareversion": {
+          "id": "imx6sx-pilot",
+          "version": "1.7.5-1",
+          "checktype": "ge"
+        }
+      },
+      "softwareversion": {
+        "checktype": "ge",
+        "version": "1.10.5-0",
+        "id": "GEN24"
+      }
+    },
+    {
+      "hardwaregroup": "TE100RW-pilot",
+      "0;0;": {
+        "INFOTEXT": "\"0;0;\" means HW-Compatibility 1 and Copy 0 is running; In /etc/hw-revision the information is saved in one line as hardwaregroup[space]HW-Comp;RunningCopy",
+        "images": [
+          {
+            "filename": "coyote-image-gen24-core-imx6sx-pilot.signed-rootfs.ubifs",
+            "type": "ubivol",
+            "volume": "rootfs_1",
+            "installed-directly": true,
+            "sha256": "25fda679d9bf74460c2bd5bbd11653621fb71c590390e64667a89ba291e4d18b",
+            "properties": {
+              "decrypted-size": "96501760"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "coyote-image-gen24-core-imx6sx-pilot.boot.ubifs",
+            "type": "ubivol",
+            "volume": "boot_1",
+            "installed-directly": true,
+            "sha256": "561d9056faf41291c016be09f887d86f29c8270f96c5ae1a4a4959a5678a8c0a",
+            "properties": {
+              "decrypted-size": "10919936"
+            },
+            "encrypted": true
+          }
+        ],
+        "scripts": [
+          {
+            "filename": "F10_copy_config.sh",
+            "type": "postinstall",
+            "sha256": "08702088909f22fcf0c36a47cd42d7bd6d865371e66220bfd50b67a8ad39b41b",
+            "properties": {
+              "decrypted-size": "601"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "F20_chmod_setupbundle.sh",
+            "type": "postinstall",
+            "sha256": "a5d256f4f05333822bb45e72152ffd2467dc69245b684df08bfb4da0fe9b58d1",
+            "properties": {
+              "decrypted-size": "287"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "F99_reboot.sh",
+            "type": "postinstall",
+            "sha256": "e4c720aec433b2c7398ddd43906af36a0291f7a9519e1dc7eddb5768709cd89b",
+            "properties": {
+              "decrypted-size": "1320"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "P00_check_reboot_lock.sh",
+            "type": "preinstall",
+            "sha256": "e8630fdfc1152967d754fc2ac73f9143e4b41147c3a3965239b259c002aee883",
+            "properties": {
+              "decrypted-size": "196"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "P04_disable_rollback.sh",
+            "type": "preinstall",
+            "sha256": "bdf86596694bce06e7d464fb30db3b6c88059e696e799d3c271f05cc590395de",
+            "properties": {
+              "decrypted-size": "78"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "P05_setup_mounts.sh",
+            "type": "preinstall",
+            "sha256": "971a967d6306635aaaf5bb36e7c9be1451b7d2c7b8d0e66e7c926bdbf4145325",
+            "properties": {
+              "decrypted-size": "1480"
+            },
+            "encrypted": true
+          }
+        ],
+        "files": [
+          {
+            "path": "/mnt/inactive/firmware/SystembusUpdateBundle.swu",
+            "sha256": "f1f472bb26264fbd259a957938ebfd9d2126be053713bde74ece1fa85e8484e4",
+            "filename": "SystembusUpdateBundle_20201007-135249.sig.swu"
+          },
+          {
+            "path": "/mnt/inactive/firmware/bundle.version",
+            "sha256": "dc9b415b0d9e071ba8b8b82062fff1283dbfcff5891ddc251caa8e4f86d16de1",
+            "filename": "bundle.version"
+          }
+        ],
+        "softwareversion": {
+          "id": "imx6sx-pilot",
+          "version": "1.7.5-1",
+          "checktype": "ge"
+        }
+      },
+      "0;1;": {
+        "images": [
+          {
+            "filename": "coyote-image-gen24-core-imx6sx-pilot.signed-rootfs.ubifs",
+            "type": "ubivol",
+            "volume": "rootfs_0",
+            "installed-directly": true,
+            "sha256": "25fda679d9bf74460c2bd5bbd11653621fb71c590390e64667a89ba291e4d18b",
+            "properties": {
+              "decrypted-size": "96501760"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "coyote-image-gen24-core-imx6sx-pilot.boot.ubifs",
+            "type": "ubivol",
+            "volume": "boot_0",
+            "installed-directly": true,
+            "sha256": "561d9056faf41291c016be09f887d86f29c8270f96c5ae1a4a4959a5678a8c0a",
+            "properties": {
+              "decrypted-size": "10919936"
+            },
+            "encrypted": true
+          }
+        ],
+        "scripts": [
+          {
+            "filename": "F10_copy_config.sh",
+            "type": "postinstall",
+            "sha256": "08702088909f22fcf0c36a47cd42d7bd6d865371e66220bfd50b67a8ad39b41b",
+            "properties": {
+              "decrypted-size": "601"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "F20_chmod_setupbundle.sh",
+            "type": "postinstall",
+            "sha256": "a5d256f4f05333822bb45e72152ffd2467dc69245b684df08bfb4da0fe9b58d1",
+            "properties": {
+              "decrypted-size": "287"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "F99_reboot.sh",
+            "type": "postinstall",
+            "sha256": "e4c720aec433b2c7398ddd43906af36a0291f7a9519e1dc7eddb5768709cd89b",
+            "properties": {
+              "decrypted-size": "1320"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "P00_check_reboot_lock.sh",
+            "type": "preinstall",
+            "sha256": "e8630fdfc1152967d754fc2ac73f9143e4b41147c3a3965239b259c002aee883",
+            "properties": {
+              "decrypted-size": "196"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "P04_disable_rollback.sh",
+            "type": "preinstall",
+            "sha256": "bdf86596694bce06e7d464fb30db3b6c88059e696e799d3c271f05cc590395de",
+            "properties": {
+              "decrypted-size": "78"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "P05_setup_mounts.sh",
+            "type": "preinstall",
+            "sha256": "971a967d6306635aaaf5bb36e7c9be1451b7d2c7b8d0e66e7c926bdbf4145325",
+            "properties": {
+              "decrypted-size": "1480"
+            },
+            "encrypted": true
+          }
+        ],
+        "files": [
+          {
+            "path": "/mnt/inactive/firmware/SystembusUpdateBundle.swu",
+            "sha256": "f1f472bb26264fbd259a957938ebfd9d2126be053713bde74ece1fa85e8484e4",
+            "filename": "SystembusUpdateBundle_20201007-135249.sig.swu"
+          },
+          {
+            "path": "/mnt/inactive/firmware/bundle.version",
+            "sha256": "dc9b415b0d9e071ba8b8b82062fff1283dbfcff5891ddc251caa8e4f86d16de1",
+            "filename": "bundle.version"
+          }
+        ],
+        "softwareversion": {
+          "id": "imx6sx-pilot",
+          "version": "1.7.5-1",
+          "checktype": "ge"
+        }
+      },
+      "softwareversion": {
+        "checktype": "ge",
+        "version": "1.10.5-0",
+        "id": "GEN24"
+      }
+    },
+    {
+      "hardwaregroup": "TE50RW-pilot",
+      "0;0;": {
+        "INFOTEXT": "\"0;0;\" means HW-Compatibility 1 and Copy 0 is running; In /etc/hw-revision the information is saved in one line as hardwaregroup[space]HW-Comp;RunningCopy",
+        "images": [
+          {
+            "filename": "coyote-image-gen24-core-imx6sx-pilot.signed-rootfs.ubifs",
+            "type": "ubivol",
+            "volume": "rootfs_1",
+            "installed-directly": true,
+            "sha256": "25fda679d9bf74460c2bd5bbd11653621fb71c590390e64667a89ba291e4d18b",
+            "properties": {
+              "decrypted-size": "96501760"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "coyote-image-gen24-core-imx6sx-pilot.boot.ubifs",
+            "type": "ubivol",
+            "volume": "boot_1",
+            "installed-directly": true,
+            "sha256": "561d9056faf41291c016be09f887d86f29c8270f96c5ae1a4a4959a5678a8c0a",
+            "properties": {
+              "decrypted-size": "10919936"
+            },
+            "encrypted": true
+          }
+        ],
+        "scripts": [
+          {
+            "filename": "F10_copy_config.sh",
+            "type": "postinstall",
+            "sha256": "08702088909f22fcf0c36a47cd42d7bd6d865371e66220bfd50b67a8ad39b41b",
+            "properties": {
+              "decrypted-size": "601"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "F20_chmod_setupbundle.sh",
+            "type": "postinstall",
+            "sha256": "a5d256f4f05333822bb45e72152ffd2467dc69245b684df08bfb4da0fe9b58d1",
+            "properties": {
+              "decrypted-size": "287"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "F99_reboot.sh",
+            "type": "postinstall",
+            "sha256": "e4c720aec433b2c7398ddd43906af36a0291f7a9519e1dc7eddb5768709cd89b",
+            "properties": {
+              "decrypted-size": "1320"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "P00_check_reboot_lock.sh",
+            "type": "preinstall",
+            "sha256": "e8630fdfc1152967d754fc2ac73f9143e4b41147c3a3965239b259c002aee883",
+            "properties": {
+              "decrypted-size": "196"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "P04_disable_rollback.sh",
+            "type": "preinstall",
+            "sha256": "bdf86596694bce06e7d464fb30db3b6c88059e696e799d3c271f05cc590395de",
+            "properties": {
+              "decrypted-size": "78"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "P05_setup_mounts.sh",
+            "type": "preinstall",
+            "sha256": "971a967d6306635aaaf5bb36e7c9be1451b7d2c7b8d0e66e7c926bdbf4145325",
+            "properties": {
+              "decrypted-size": "1480"
+            },
+            "encrypted": true
+          }
+        ],
+        "files": [
+          {
+            "path": "/mnt/inactive/firmware/SystembusUpdateBundle.swu",
+            "sha256": "f1f472bb26264fbd259a957938ebfd9d2126be053713bde74ece1fa85e8484e4",
+            "filename": "SystembusUpdateBundle_20201007-135249.sig.swu"
+          },
+          {
+            "path": "/mnt/inactive/firmware/bundle.version",
+            "sha256": "dc9b415b0d9e071ba8b8b82062fff1283dbfcff5891ddc251caa8e4f86d16de1",
+            "filename": "bundle.version"
+          }
+        ],
+        "softwareversion": {
+          "id": "imx6sx-pilot",
+          "version": "1.7.5-1",
+          "checktype": "ge"
+        }
+      },
+      "0;1;": {
+        "images": [
+          {
+            "filename": "coyote-image-gen24-core-imx6sx-pilot.signed-rootfs.ubifs",
+            "type": "ubivol",
+            "volume": "rootfs_0",
+            "installed-directly": true,
+            "sha256": "25fda679d9bf74460c2bd5bbd11653621fb71c590390e64667a89ba291e4d18b",
+            "properties": {
+              "decrypted-size": "96501760"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "coyote-image-gen24-core-imx6sx-pilot.boot.ubifs",
+            "type": "ubivol",
+            "volume": "boot_0",
+            "installed-directly": true,
+            "sha256": "561d9056faf41291c016be09f887d86f29c8270f96c5ae1a4a4959a5678a8c0a",
+            "properties": {
+              "decrypted-size": "10919936"
+            },
+            "encrypted": true
+          }
+        ],
+        "scripts": [
+          {
+            "filename": "F10_copy_config.sh",
+            "type": "postinstall",
+            "sha256": "08702088909f22fcf0c36a47cd42d7bd6d865371e66220bfd50b67a8ad39b41b",
+            "properties": {
+              "decrypted-size": "601"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "F20_chmod_setupbundle.sh",
+            "type": "postinstall",
+            "sha256": "a5d256f4f05333822bb45e72152ffd2467dc69245b684df08bfb4da0fe9b58d1",
+            "properties": {
+              "decrypted-size": "287"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "F99_reboot.sh",
+            "type": "postinstall",
+            "sha256": "e4c720aec433b2c7398ddd43906af36a0291f7a9519e1dc7eddb5768709cd89b",
+            "properties": {
+              "decrypted-size": "1320"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "P00_check_reboot_lock.sh",
+            "type": "preinstall",
+            "sha256": "e8630fdfc1152967d754fc2ac73f9143e4b41147c3a3965239b259c002aee883",
+            "properties": {
+              "decrypted-size": "196"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "P04_disable_rollback.sh",
+            "type": "preinstall",
+            "sha256": "bdf86596694bce06e7d464fb30db3b6c88059e696e799d3c271f05cc590395de",
+            "properties": {
+              "decrypted-size": "78"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "P05_setup_mounts.sh",
+            "type": "preinstall",
+            "sha256": "971a967d6306635aaaf5bb36e7c9be1451b7d2c7b8d0e66e7c926bdbf4145325",
+            "properties": {
+              "decrypted-size": "1480"
+            },
+            "encrypted": true
+          }
+        ],
+        "files": [
+          {
+            "path": "/mnt/inactive/firmware/SystembusUpdateBundle.swu",
+            "sha256": "f1f472bb26264fbd259a957938ebfd9d2126be053713bde74ece1fa85e8484e4",
+            "filename": "SystembusUpdateBundle_20201007-135249.sig.swu"
+          },
+          {
+            "path": "/mnt/inactive/firmware/bundle.version",
+            "sha256": "dc9b415b0d9e071ba8b8b82062fff1283dbfcff5891ddc251caa8e4f86d16de1",
+            "filename": "bundle.version"
+          }
+        ],
+        "softwareversion": {
+          "id": "imx6sx-pilot",
+          "version": "1.7.5-1",
+          "checktype": "ge"
+        }
+      },
+      "softwareversion": {
+        "checktype": "ge",
+        "version": "1.10.5-0",
+        "id": "GEN24"
+      }
+    },
+    {
+      "hardwaregroup": "TEP50RW-pilot",
+      "0;0;": {
+        "INFOTEXT": "\"0;0;\" means HW-Compatibility 1 and Copy 0 is running; In /etc/hw-revision the information is saved in one line as hardwaregroup[space]HW-Comp;RunningCopy",
+        "images": [
+          {
+            "filename": "coyote-image-gen24-core-imx6sx-pilot.signed-rootfs.ubifs",
+            "type": "ubivol",
+            "volume": "rootfs_1",
+            "installed-directly": true,
+            "sha256": "25fda679d9bf74460c2bd5bbd11653621fb71c590390e64667a89ba291e4d18b",
+            "properties": {
+              "decrypted-size": "96501760"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "coyote-image-gen24-core-imx6sx-pilot.boot.ubifs",
+            "type": "ubivol",
+            "volume": "boot_1",
+            "installed-directly": true,
+            "sha256": "561d9056faf41291c016be09f887d86f29c8270f96c5ae1a4a4959a5678a8c0a",
+            "properties": {
+              "decrypted-size": "10919936"
+            },
+            "encrypted": true
+          }
+        ],
+        "scripts": [
+          {
+            "filename": "F10_copy_config.sh",
+            "type": "postinstall",
+            "sha256": "08702088909f22fcf0c36a47cd42d7bd6d865371e66220bfd50b67a8ad39b41b",
+            "properties": {
+              "decrypted-size": "601"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "F20_chmod_setupbundle.sh",
+            "type": "postinstall",
+            "sha256": "a5d256f4f05333822bb45e72152ffd2467dc69245b684df08bfb4da0fe9b58d1",
+            "properties": {
+              "decrypted-size": "287"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "F99_reboot.sh",
+            "type": "postinstall",
+            "sha256": "e4c720aec433b2c7398ddd43906af36a0291f7a9519e1dc7eddb5768709cd89b",
+            "properties": {
+              "decrypted-size": "1320"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "P00_check_reboot_lock.sh",
+            "type": "preinstall",
+            "sha256": "e8630fdfc1152967d754fc2ac73f9143e4b41147c3a3965239b259c002aee883",
+            "properties": {
+              "decrypted-size": "196"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "P04_disable_rollback.sh",
+            "type": "preinstall",
+            "sha256": "bdf86596694bce06e7d464fb30db3b6c88059e696e799d3c271f05cc590395de",
+            "properties": {
+              "decrypted-size": "78"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "P05_setup_mounts.sh",
+            "type": "preinstall",
+            "sha256": "971a967d6306635aaaf5bb36e7c9be1451b7d2c7b8d0e66e7c926bdbf4145325",
+            "properties": {
+              "decrypted-size": "1480"
+            },
+            "encrypted": true
+          }
+        ],
+        "files": [
+          {
+            "path": "/mnt/inactive/firmware/SystembusUpdateBundle.swu",
+            "sha256": "f1f472bb26264fbd259a957938ebfd9d2126be053713bde74ece1fa85e8484e4",
+            "filename": "SystembusUpdateBundle_20201007-135249.sig.swu"
+          },
+          {
+            "path": "/mnt/inactive/firmware/bundle.version",
+            "sha256": "dc9b415b0d9e071ba8b8b82062fff1283dbfcff5891ddc251caa8e4f86d16de1",
+            "filename": "bundle.version"
+          }
+        ],
+        "softwareversion": {
+          "id": "imx6sx-pilot",
+          "version": "1.7.5-1",
+          "checktype": "ge"
+        }
+      },
+      "0;1;": {
+        "images": [
+          {
+            "filename": "coyote-image-gen24-core-imx6sx-pilot.signed-rootfs.ubifs",
+            "type": "ubivol",
+            "volume": "rootfs_0",
+            "installed-directly": true,
+            "sha256": "25fda679d9bf74460c2bd5bbd11653621fb71c590390e64667a89ba291e4d18b",
+            "properties": {
+              "decrypted-size": "96501760"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "coyote-image-gen24-core-imx6sx-pilot.boot.ubifs",
+            "type": "ubivol",
+            "volume": "boot_0",
+            "installed-directly": true,
+            "sha256": "561d9056faf41291c016be09f887d86f29c8270f96c5ae1a4a4959a5678a8c0a",
+            "properties": {
+              "decrypted-size": "10919936"
+            },
+            "encrypted": true
+          }
+        ],
+        "scripts": [
+          {
+            "filename": "F10_copy_config.sh",
+            "type": "postinstall",
+            "sha256": "08702088909f22fcf0c36a47cd42d7bd6d865371e66220bfd50b67a8ad39b41b",
+            "properties": {
+              "decrypted-size": "601"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "F20_chmod_setupbundle.sh",
+            "type": "postinstall",
+            "sha256": "a5d256f4f05333822bb45e72152ffd2467dc69245b684df08bfb4da0fe9b58d1",
+            "properties": {
+              "decrypted-size": "287"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "F99_reboot.sh",
+            "type": "postinstall",
+            "sha256": "e4c720aec433b2c7398ddd43906af36a0291f7a9519e1dc7eddb5768709cd89b",
+            "properties": {
+              "decrypted-size": "1320"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "P00_check_reboot_lock.sh",
+            "type": "preinstall",
+            "sha256": "e8630fdfc1152967d754fc2ac73f9143e4b41147c3a3965239b259c002aee883",
+            "properties": {
+              "decrypted-size": "196"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "P04_disable_rollback.sh",
+            "type": "preinstall",
+            "sha256": "bdf86596694bce06e7d464fb30db3b6c88059e696e799d3c271f05cc590395de",
+            "properties": {
+              "decrypted-size": "78"
+            },
+            "encrypted": true
+          },
+          {
+            "filename": "P05_setup_mounts.sh",
+            "type": "preinstall",
+            "sha256": "971a967d6306635aaaf5bb36e7c9be1451b7d2c7b8d0e66e7c926bdbf4145325",
+            "properties": {
+              "decrypted-size": "1480"
+            },
+            "encrypted": true
+          }
+        ],
+        "files": [
+          {
+            "path": "/mnt/inactive/firmware/SystembusUpdateBundle.swu",
+            "sha256": "f1f472bb26264fbd259a957938ebfd9d2126be053713bde74ece1fa85e8484e4",
+            "filename": "SystembusUpdateBundle_20201007-135249.sig.swu"
+          },
+          {
+            "path": "/mnt/inactive/firmware/bundle.version",
+            "sha256": "dc9b415b0d9e071ba8b8b82062fff1283dbfcff5891ddc251caa8e4f86d16de1",
+            "filename": "bundle.version"
+          }
+        ],
+        "softwareversion": {
+          "id": "imx6sx-pilot",
+          "version": "1.7.5-1",
+          "checktype": "ge"
+        }
+      },
+      "softwareversion": {
+        "checktype": "ge",
+        "version": "1.10.5-0",
+        "id": "GEN24"
+      }
+    },
+    {
+      "hardwaregroup": "DEVICEGROUP",
+      "softwareversion": {
+        "checktype": "ge",
+        "version": "1.10.5-0",
+        "id": "GEN24"
+      },
+      "P10RW": {
+        "files": [
+          {
+            "path": "/mnt/inactive/firmware/Gen24RemoteUpdateLookup.json",
+            "sha256": "c7157b9179c416b5575a6e0b38fe81038322b53386a50aee028fd33c416b8118",
+            "filename": "Gen24RemoteUpdateLookup_P10RW.json",
+            "encrypted": true,
+            "properties": {
+              "decrypted-size": "326"
+            }
+          },
+          {
+            "path": "/mnt/inactive/firmware/setupbundle.tgz",
+            "sha256": "ee41bfde4199555550597b106bca6a183e1fda853dc168463976ab6846727c75",
+            "filename": "bundle_P10RW_20201007135406.tgz",
+            "encrypted": true,
+            "properties": {
+              "decrypted-size": "451346"
+            }
+          }
+        ]
+      },
+      "P10US": {
+        "files": [
+          {
+            "path": "/mnt/inactive/firmware/Gen24RemoteUpdateLookup.json",
+            "sha256": "87748d21468458d54bff86ef2b6f7a5573dbaa7571de4e11b621a7494891a2b8",
+            "filename": "Gen24RemoteUpdateLookup_P10US.json",
+            "encrypted": true,
+            "properties": {
+              "decrypted-size": "326"
+            }
+          },
+          {
+            "path": "/mnt/inactive/firmware/setupbundle.tgz",
+            "sha256": "6e46a2348c954c65cdce50e6198f4674989f544f1430bb71aa26ea6898532522",
+            "filename": "bundle_P10US_20201007135422.tgz",
+            "encrypted": true,
+            "properties": {
+              "decrypted-size": "241326"
+            }
+          }
+        ]
+      },
+      "P6RW": {
+        "files": [
+          {
+            "path": "/mnt/inactive/firmware/Gen24RemoteUpdateLookup.json",
+            "sha256": "34d5db048c0acf93671ded13fa542b179705e5d5e8f25cfa2ba04b4822dbb7ee",
+            "filename": "Gen24RemoteUpdateLookup_P6RW.json",
+            "encrypted": true,
+            "properties": {
+              "decrypted-size": "325"
+            }
+          },
+          {
+            "path": "/mnt/inactive/firmware/setupbundle.tgz",
+            "sha256": "50bd49068184cdf835d9a90c50d08a081ddeec27b4b00998fd03a2979b0bafea",
+            "filename": "bundle_P6RW_20201007135304.tgz",
+            "encrypted": true,
+            "properties": {
+              "decrypted-size": "451365"
+            }
+          }
+        ]
+      },
+      "P6US": {
+        "files": [
+          {
+            "path": "/mnt/inactive/firmware/Gen24RemoteUpdateLookup.json",
+            "sha256": "c51ce19c20ce726401e71d9653d0917b6b37562773b22c58d20790e4f7d11e41",
+            "filename": "Gen24RemoteUpdateLookup_P6US.json",
+            "encrypted": true,
+            "properties": {
+              "decrypted-size": "325"
+            }
+          },
+          {
+            "path": "/mnt/inactive/firmware/setupbundle.tgz",
+            "sha256": "fc232627a47e53745261bf0b3579b02becce81001d5f0ffa0956e39a545a552e",
+            "filename": "bundle_P6US_20201007135358.tgz",
+            "encrypted": true,
+            "properties": {
+              "decrypted-size": "241340"
+            }
+          }
+        ]
+      },
+      "S10RW": {
+        "files": [
+          {
+            "path": "/mnt/inactive/firmware/Gen24RemoteUpdateLookup.json",
+            "sha256": "05602ed47af72c0c92c619b4f8d35005a24939c345b58fea01273bfed99a4365",
+            "filename": "Gen24RemoteUpdateLookup_S10RW.json",
+            "encrypted": true,
+            "properties": {
+              "decrypted-size": "326"
+            }
+          },
+          {
+            "path": "/mnt/inactive/firmware/setupbundle.tgz",
+            "sha256": "bbd24b1dfcf6505d0d16968ae9474be58e739c3ac006df78a9cc892c98d1c26c",
+            "filename": "bundle_S10RW_20201007135623.tgz",
+            "encrypted": true,
+            "properties": {
+              "decrypted-size": "526905"
+            }
+          }
+        ]
+      },
+      "S5RW": {
+        "files": [
+          {
+            "path": "/mnt/inactive/firmware/Gen24RemoteUpdateLookup.json",
+            "sha256": "9abc37dc65d0405f1edd33deb1ab38185179d5b356833f15b71e75d13cc4553b",
+            "filename": "Gen24RemoteUpdateLookup_S5RW.json",
+            "encrypted": true,
+            "properties": {
+              "decrypted-size": "325"
+            }
+          },
+          {
+            "path": "/mnt/inactive/firmware/setupbundle.tgz",
+            "sha256": "5bdd1d84e368b0262a67bf12e71204cd1cbbc1d934e0ade63ad50f3b681ba20f",
+            "filename": "bundle_S5RW_20201007135430.tgz",
+            "encrypted": true,
+            "properties": {
+              "decrypted-size": "526900"
+            }
+          }
+        ]
+      },
+      "TB50RW": {
+        "files": [
+          {
+            "path": "/mnt/inactive/firmware/Gen24RemoteUpdateLookup.json",
+            "sha256": "e9541eebb770caad0d0331bb83493cfe1bd3622ff0b92a8cb30279684559602d",
+            "filename": "Gen24RemoteUpdateLookup_TB50RW.json",
+            "encrypted": true,
+            "properties": {
+              "decrypted-size": "402"
+            }
+          },
+          {
+            "path": "/mnt/inactive/firmware/setupbundle.tgz",
+            "sha256": "ce930a654576b9119e53e0011c1cb9ddfe52cf38df0c4be0629b4050c91332dc",
+            "filename": "bundle_TB50RW_20201007135551.tgz",
+            "encrypted": true,
+            "properties": {
+              "decrypted-size": "392406"
+            }
+          }
+        ]
+      },
+      "TBP50RW": {
+        "files": [
+          {
+            "path": "/mnt/inactive/firmware/Gen24RemoteUpdateLookup.json",
+            "sha256": "8437413b0635b80a42f75655ae827eec75f268cea79fb81ccfa25e1898322098",
+            "filename": "Gen24RemoteUpdateLookup_TBP50RW.json",
+            "encrypted": true,
+            "properties": {
+              "decrypted-size": "328"
+            }
+          },
+          {
+            "path": "/mnt/inactive/firmware/setupbundle.tgz",
+            "sha256": "fb4e114be1b10fe7af34b12321ed4031401bffe22dfd2397e841fd1e3d82651b",
+            "filename": "bundle_TBP50RW_20201007135608.tgz",
+            "encrypted": true,
+            "properties": {
+              "decrypted-size": "392407"
+            }
+          }
+        ]
+      },
+      "TE100RW": {
+        "files": [
+          {
+            "path": "/mnt/inactive/firmware/Gen24RemoteUpdateLookup.json",
+            "sha256": "3b976a1423f3b467cf2f55d617a8fe8a61091ecb4157a33d9149de351b73c026",
+            "filename": "Gen24RemoteUpdateLookup_TE100RW.json",
+            "encrypted": true,
+            "properties": {
+              "decrypted-size": "403"
+            }
+          },
+          {
+            "path": "/mnt/inactive/firmware/setupbundle.tgz",
+            "sha256": "06f9fabf27f9ead546f864f25c9bb215637b5b1b95f5030b64141024dce9354e",
+            "filename": "bundle_TE100RW_20201007135502.tgz",
+            "encrypted": true,
+            "properties": {
+              "decrypted-size": "387622"
+            }
+          }
+        ]
+      },
+      "TE50RW": {
+        "files": [
+          {
+            "path": "/mnt/inactive/firmware/Gen24RemoteUpdateLookup.json",
+            "sha256": "a3b4cd3b832c440fbc01c9883e1e3bbc10af57f541577ab67a1be855d3571aac",
+            "filename": "Gen24RemoteUpdateLookup_TE50RW.json",
+            "encrypted": true,
+            "properties": {
+              "decrypted-size": "402"
+            }
+          },
+          {
+            "path": "/mnt/inactive/firmware/setupbundle.tgz",
+            "sha256": "ce804ad23647514bfb3e058973fb1bb7d7e79a566e8d205c3c8f09cbb0a77cb4",
+            "filename": "bundle_TE50RW_20201007135448.tgz",
+            "encrypted": true,
+            "properties": {
+              "decrypted-size": "387609"
+            }
+          }
+        ]
+      },
+      "TEP50RW": {
+        "files": [
+          {
+            "path": "/mnt/inactive/firmware/Gen24RemoteUpdateLookup.json",
+            "sha256": "1733b24c06a011cf575e59ec259e5c83a18ee5d9bef5ab731437ed865f051269",
+            "filename": "Gen24RemoteUpdateLookup_TEP50RW.json",
+            "encrypted": true,
+            "properties": {
+              "decrypted-size": "328"
+            }
+          },
+          {
+            "path": "/mnt/inactive/firmware/setupbundle.tgz",
+            "sha256": "8b4028aa5977662a767a94d0330c9ba92909f196951d139c1990a0b04300f2af",
+            "filename": "bundle_TEP50RW_20201007135520.tgz",
+            "encrypted": true,
+            "properties": {
+              "decrypted-size": "387604"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
