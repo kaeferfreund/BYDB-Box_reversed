@@ -34,6 +34,7 @@ print("Connected to: " + ser.portstr)
 firstByte = 0
 secondByte = 0
 messageFound = False
+gotLength = False
 MSG = []
 byteCounter = 0
 
@@ -57,22 +58,36 @@ while ser.is_open:
         MSG.append(ord(ser_bytes))
         byteCounter = byteCounter + 1
 
-        if byteCounter >= 8:
+        if byteCounter == 7:
             data = MSG[0:6]
             crc = Crc16Modbus.calc(data)
 
             if MSG[6] == crc%256 and MSG[7] == crc/256:
                 print("Request recieved")
-                print("CRC - OK: " + str(crc % 256) + ", " + str(crc / 256))
+                print("CRC - OK: (" + str(crc % 256) + ", " + str(crc / 256)+")")
                 print("MSG: " + str(MSG))
                 print("Register: " )
 
                 messageFound = False
                 MSG = 0
                 byteCounter = 0
-            #else:
-            #    print("found reply")
-            #    print("Length: " + str(MSG[3]))
+            else:
+                print("found reply")
+                print(" ->Length: " + str(MSG[2]))
+                gotLength = True
+        if gotLength:
+            msgLen = 2 + MSG[2] + 2
+            if byteCounter == msgLen:
+                data = MSG[0:msgLen - 1]
+                crc = Crc16Modbus.calc(data)
+                if MSG[msgLen-1] == crc % 256 and MSG[msgLen] == crc / 256:
+                    print("CRC OK: (" + str(crc % 256) + ", " + str(crc / 256) + ")")
+                    print("MSG: " + str(MSG))
+                    messageFound = False
+                    MSG = 0
+                    byteCounter = 0
+                    gotLength = False
+
 
     #print(strftime("%Y-%m-%d_%H-%M %S",gmtime()) + ": " + repr(ser_bytes))
     #f.write(strftime("%Y-%m-%d_%H-%M %S",gmtime()) + ": " + repr(ser_bytes))
