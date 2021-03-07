@@ -21,3 +21,7 @@ Its a simple RS485 to USB converter. We are simply loggin the raw serial-data wi
 * https://www.fronius.com/~/downloads/Solar%20Energy/Datasheets/SE_DS_Fronius_Symo_GEN24_Plus_EN.pdf
 * https://www.fronius.com/~/downloads/Solar%20Energy/Quick%20Guides/SE_QG_Fronius_Symo_GEN24_Plus_-_System_configurati_MULTI.pdf
 * https://www.fronius.com/~/downloads/Solar%20Energy/Firmware/SE_FW_Fronius_Solar.update_Symo_GEN24_Plus_1.9.7-0_DE_EN.zip
+
+# BYD Stuff
+1. BYD LAN IP 192.168.23.244
+2. BYD WiFi IP 192.168.16.254
