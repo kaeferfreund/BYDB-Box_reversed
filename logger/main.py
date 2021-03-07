@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 import serial, json, codecs
 from time import gmtime, strftime
 import struct
@@ -25,9 +28,24 @@ print("Connected to: " + ser.portstr)
 # open log file
 f = codecs.open( strftime("%Y-%m-%d_%H-%M",gmtime()) + ".log", 'w')
 
+firstByte = 00
+secondByte = 00
+messageFound = False
+MSG = []
+
 # logging loop
 while ser.is_open:
     ser_bytes = ser.read()
+
+    if messageFound == False:
+        secondByte = firstByte
+        firstByte = ser_bytes
+
+        if firstByte == 01 & secondByte == 03:
+            messageFound = True
+            print("MSG to BYD")
+    else:
+        MSG.append(ser_bytes)
 
     print(strftime("%Y-%m-%d_%H-%M %S",gmtime()) + ": " + repr(ser_bytes))
     f.write(strftime("%Y-%m-%d_%H-%M %S",gmtime()) + ": " + repr(ser_bytes))
