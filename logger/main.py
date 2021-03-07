@@ -10,15 +10,7 @@ import struct
 # simple serial logger by 
 # Manuel Cargnel
 # (c) C2 Konzepte GbR
-# 17-10-2020
-
-# Quick calculation
-
-
-data = [01,03,01,02,00,16]
-crc = Crc16Modbus.calc(data)
-print("crc: "  + str(crc%256) +","+ str(crc/256))
-# Result should be 228 + 58
+# 07-03-2021
 
 
 # open serialPort
@@ -37,10 +29,10 @@ ser = serial.Serial(
 print("Connected to: " + ser.portstr)
 
 # open log file
-f = codecs.open( strftime("%Y-%m-%d_%H-%M",gmtime()) + ".log", 'w')
+#f = codecs.open( strftime("%Y-%m-%d_%H-%M",gmtime()) + ".log", 'w')
 
-firstByte = 00
-secondByte = 00
+firstByte = 0
+secondByte = 0
 messageFound = False
 MSG = []
 byteCounter = 0
@@ -51,29 +43,41 @@ while ser.is_open:
 
     if messageFound == False:
         secondByte = firstByte
-        firstByte = ser_bytes
+        firstByte = ord(ser_bytes)
+        #print(firstByte)
 
-        if firstByte == 01 & secondByte == 03:
+        if firstByte == 3 and secondByte == 1:
             messageFound = True
-            MSG.append(firstByte)
+            MSG = []
             MSG.append(secondByte)
-            byteCounter = 2
+            MSG.append(firstByte)
+            byteCounter = 1
             print("MSG to BYD")
     else:
-        MSG.append(ser_bytes)
+        MSG.append(ord(ser_bytes))
         byteCounter = byteCounter + 1
 
-        if byteCounter == 8:
-            data = MSG
+        if byteCounter >= 8:
+            data = MSG[0:6]
             crc = Crc16Modbus.calc(data)
 
-            if MSG[7] == crc%256 & MSG[8] == crc/256:
-                print("Anforderung an BYD empfangen")
+            if MSG[6] == crc%256 and MSG[7] == crc/256:
+                print("Request recieved")
+                print("CRC - OK: " + str(crc % 256) + ", " + str(crc / 256))
+                print("MSG: " + str(MSG))
+                print("Register: " )
 
-    print(strftime("%Y-%m-%d_%H-%M %S",gmtime()) + ": " + repr(ser_bytes))
-    f.write(strftime("%Y-%m-%d_%H-%M %S",gmtime()) + ": " + repr(ser_bytes))
+                messageFound = False
+                MSG = 0
+                byteCounter = 0
+            #else:
+            #    print("found reply")
+            #    print("Length: " + str(MSG[3]))
+
+    #print(strftime("%Y-%m-%d_%H-%M %S",gmtime()) + ": " + repr(ser_bytes))
+    #f.write(strftime("%Y-%m-%d_%H-%M %S",gmtime()) + ": " + repr(ser_bytes))
 
 ser.close()
-f.close()
+#f.close()
 
 print("File + Port closed")
