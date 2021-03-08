@@ -1,0 +1,3 @@
+[submodule "iobroker/ioBroker.bydhvs"]
+	path = iobroker/ioBroker.bydhvs
+	url = https://github.com/christianh17/ioBroker.bydhvs.git
