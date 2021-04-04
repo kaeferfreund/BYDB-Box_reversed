@@ -27,7 +27,9 @@ Its a simple RS485 to USB converter. We are simply loggin the raw serial-data wi
 2. BYD WiFi IP 192.168.16.254
 
 ## BYD Accounts
+```
 Installer:          BYDB-Box
-Service Partner:    B-Box2EFT 
-Inverter Partner:   B-Box2inv 
+Service Partner:    B-Box2EFT
+Inverter Partner:   B-Box2inv
 Admin:              BYD#Premium*2020
+```
