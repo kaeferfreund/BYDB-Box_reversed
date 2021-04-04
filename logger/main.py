@@ -37,6 +37,7 @@ messageFound = False
 gotLength = False
 MSG = []
 byteCounter = 0
+REQ = []
 
 # logging loop
 while ser.is_open:
@@ -53,7 +54,7 @@ while ser.is_open:
             MSG.append(secondByte)
             MSG.append(firstByte)
             byteCounter = 1
-            print("MSG to BYD")
+            #print("MSG to BYD")
     else:
         MSG.append(ord(ser_bytes))
         byteCounter = byteCounter + 1
@@ -63,28 +64,48 @@ while ser.is_open:
             crc = Crc16Modbus.calc(data)
 
             if MSG[6] == crc%256 and MSG[7] == crc/256:
-                print("Request recieved")
-                print("CRC - OK: (" + str(crc % 256) + ", " + str(crc / 256)+")")
-                print("MSG: " + str(MSG))
-                print("Register: " )
+                #print("Request recieved")
+                #print("CRC - OK: (" + str(crc % 256) + ", " + str(crc / 256)+")")
+                #print("REQ: " + str(MSG))
+                #print("Register: " )
 
                 messageFound = False
+                REQ = list(MSG)
                 MSG = 0
                 byteCounter = 0
             else:
-                print("found reply")
-                print(" ->Length: " + str(MSG[2]))
+                #print("found reply")
+                #print(" ->Length: " + str(MSG[2]))
                 gotLength = True
         if gotLength:
             msgLen = 2 + MSG[2] + 2
             if byteCounter == msgLen:
-                data = MSG[0:msgLen - 1]
-                crc = Crc16Modbus.calc(data)
+                cleanMSG = MSG[0:msgLen - 1]
+                crc = Crc16Modbus.calc(cleanMSG)
+                #print("CRC OK: (" + str(crc % 256) + ", " + str(crc / 256) + ")")
+
                 if MSG[msgLen-1] == crc % 256 and MSG[msgLen] == crc / 256:
-                    print("CRC OK: (" + str(crc % 256) + ", " + str(crc / 256) + ")")
-                    print("MSG: " + str(MSG))
+
+                    # data does not contain addr, length and crc
+                    data = cleanMSG[3:]
+
+                    converted = []
+                    for i in range(0, len(data)):
+                        if(i%2 == 0):
+                            result = (data[i] * 256) + data[i + 1]
+                            if (result > 32768):
+                                result = result - 65536
+                            # if result == 13:
+                            # print("FOUND 13")
+                            converted.append(result)
+                    if int(REQ[3]) == 30:
+                        print("REQ: " + str(REQ))
+                        #print("D " + str(data))
+                        print("C "  +str(converted))
+
                     messageFound = False
                     MSG = 0
+                    REQ = []
                     byteCounter = 0
                     gotLength = False
 
