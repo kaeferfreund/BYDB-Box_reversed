@@ -44,6 +44,7 @@ def toFloat(hBI, lBI):
 
     return 2# result
 
+Command1 = bytearray(b'\x01\x03\x01\x02\x00\x10\xe4\x3a')
 
 # open serialPort
 # please replace /dev/cu.usbserial-A50285BI with your actual device
@@ -152,10 +153,11 @@ while ser.is_open:
 
                             BE.append(result)
 
-                    if int(REQ[3]) == 2:
+                    if bytearray(REQ) == Command1:
                         #print ' '.join(format(x, '02x') for x in REQ)
                         #print ' '.join(format(x, '02x') for x in data)
                         print ' '.join(format(ord(x), '02x') for x in orgMSG)
+                        #print ' '.join(str(ord(x)) for x in orgMSG)
 
                         #print("BE: " + str(BE))
                         #print("LE: " + str(LE))
