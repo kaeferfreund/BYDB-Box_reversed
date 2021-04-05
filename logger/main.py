@@ -152,13 +152,13 @@ while ser.is_open:
 
                             BE.append(result)
 
-                    if int(REQ[3]) == 30:
-                        print ' '.join(format(x, '02x') for x in REQ)
-                        print ' '.join(format(x, '02x') for x in data)
+                    if int(REQ[3]) == 2:
+                        #print ' '.join(format(x, '02x') for x in REQ)
+                        #print ' '.join(format(x, '02x') for x in data)
                         print ' '.join(format(ord(x), '02x') for x in orgMSG)
 
-                        print("BE: " + str(BE))
-                        print("LE: " + str(LE))
+                        #print("BE: " + str(BE))
+                        #print("LE: " + str(LE))
 
                     messageFound = False
                     MSG = []
