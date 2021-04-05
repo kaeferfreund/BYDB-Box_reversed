@@ -12,13 +12,46 @@ import struct
 # (c) C2 Konzepte GbR
 # 07-03-2021
 
+def intToBytes(number):
+    byte_array = []
+    while number != 0:
+        byte_array = [number % 256] + byte_array
+        number = number // 256
+    return byte_array
+
+def toInt(hB, lB):
+    result = (hB * 256) + lB
+    if (result > 32768):
+        result = result - 65536
+    return result
+
+def toUInt(hB, lB):
+    result = (hB * 256) + lB
+    return result
+
+
+def toFloat(hBI, lBI):
+    hB = struct.pack("B", hBI)
+    lB = struct.pack("B", lBI)
+
+    bb = bytearray([hBI, lBI])
+    print(repr(bb))
+
+    bytes = repr(hB) + repr(lB)
+    bytes = bytes.replace('\'', '')
+
+    #result = struct.unpack('d', bb)[0]
+
+    return 2# result
+
+Command1 = bytearray(b'\x01\x03\x01\x02\x00\x10\xe4\x3a')
 
 # open serialPort
 # please replace /dev/cu.usbserial-A50285BI with your actual device
 # bitte ersetzen Sie /dev/cu.usbserial-A50285BI durch Ihr Gerät
 
 ser = serial.Serial(
-    port='/dev/cu.usbserial-A50285BI',\
+    port='COM6',\
     baudrate=9600,\
     parity=serial.PARITY_NONE,\
     stopbits=serial.STOPBITS_ONE,\
@@ -36,6 +69,7 @@ secondByte = 0
 messageFound = False
 gotLength = False
 MSG = []
+orgMSG = []
 byteCounter = 0
 REQ = []
 
@@ -45,18 +79,22 @@ while ser.is_open:
 
     if messageFound == False:
         secondByte = firstByte
-        firstByte = ord(ser_bytes)
+        firstByte = ser_bytes
         #print(firstByte)
 
-        if firstByte == 3 and secondByte == 1:
+        if ord(firstByte) == 3 and ord(secondByte) == 1:
             messageFound = True
             MSG = []
-            MSG.append(secondByte)
-            MSG.append(firstByte)
+            orgMSG = []
+            MSG.append(ord(secondByte))
+            MSG.append(ord(firstByte))
+            orgMSG.append(secondByte)
+            orgMSG.append(firstByte)
             byteCounter = 1
             #print("MSG to BYD")
     else:
         MSG.append(ord(ser_bytes))
+        orgMSG.append(ser_bytes)
         byteCounter = byteCounter + 1
 
         if byteCounter == 7:
@@ -71,7 +109,8 @@ while ser.is_open:
 
                 messageFound = False
                 REQ = list(MSG)
-                MSG = 0
+                MSG = []
+                orgMSG = []
                 byteCounter = 0
             else:
                 #print("found reply")
@@ -89,22 +128,43 @@ while ser.is_open:
                     # data does not contain addr, length and crc
                     data = cleanMSG[3:]
 
-                    converted = []
-                    for i in range(0, len(data)):
+                    BE = []
+                    LE = []
+
+                    for i in range(0, len(data)-1):
+
                         if(i%2 == 0):
-                            result = (data[i] * 256) + data[i + 1]
-                            if (result > 32768):
-                                result = result - 65536
-                            # if result == 13:
-                            # print("FOUND 13")
-                            converted.append(result)
-                    if int(REQ[3]) == 30:
-                        print("REQ: " + str(REQ))
-                        #print("D " + str(data))
-                        print("C "  +str(converted))
+                            result = toInt(data[i], data[i + 1])
+                            LE.append(result)
+
+                        if(i%4 == 0):
+
+                            ba = []
+                            ba.append(orgMSG[i+5]) #A -3
+                            ba.append(orgMSG[i+6]) #B- 4
+                            ba.append(orgMSG[i+3]) #C - 5
+                            ba.append(orgMSG[i+4]) #D - 6
+
+                            #print ' '.join(format(ord(x), '02x') for x in ba)
+                            #result = struct.unpack("!i",bytearray(ba))[0]/10000.0
+                            #result = toInt(hb, lb)
+
+                            #print("hb: " + hex(hb) + " - lb: " + hex(lb) + " - res: " + str(result))
+
+                            BE.append(result)
+
+                    if bytearray(REQ) == Command1:
+                        #print ' '.join(format(x, '02x') for x in REQ)
+                        #print ' '.join(format(x, '02x') for x in data)
+                        print ' '.join(format(ord(x), '02x') for x in orgMSG)
+                        #print ' '.join(str(ord(x)) for x in orgMSG)
+
+                        #print("BE: " + str(BE))
+                        #print("LE: " + str(LE))
 
                     messageFound = False
-                    MSG = 0
+                    MSG = []
+                    orgMSG = []
                     REQ = []
                     byteCounter = 0
                     gotLength = False
