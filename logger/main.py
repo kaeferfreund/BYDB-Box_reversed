@@ -4,6 +4,7 @@
 import serial, json, codecs
 from time import gmtime, strftime
 from crccheck.crc import Crc16Modbus
+import Queue
 
 import struct
 
@@ -44,7 +45,9 @@ def toFloat(hBI, lBI):
 
     return 2# result
 
-Command1 = bytearray(b'\x01\x03\x01\x02\x00\x10\xe4\x3a')
+Command1 = bytearray(b'\x15\x03\x01\x91\x00\x01\xd7\x0f')
+Command2 = bytearray(b'\x15\x03\x01\x2c\x00\x18\x86\xe1')
+Command3 = bytearray(b'\x01\x03\x04\x00\x00\x10\x45\x36')
 
 # open serialPort
 # please replace /dev/cu.usbserial-A50285BI with your actual device
@@ -64,26 +67,97 @@ print("Connected to: " + ser.portstr)
 # open log file
 #f = codecs.open( strftime("%Y-%m-%d_%H-%M",gmtime()) + ".log", 'w')
 
-firstByte = 0
-secondByte = 0
+inQ = q1 = Queue.Queue()
+
 messageFound = False
-gotLength = False
-MSG = []
-orgMSG = []
-byteCounter = 0
-REQ = []
+request = []
+replyByteCount = 0
 
 # logging loop
 while ser.is_open:
     ser_bytes = ser.read()
+    inQ.put(ser_bytes)
 
+    # we are looking for a request, which is 7 bytes long
+    if(messageFound == False and inQ.qsize() == 8):
+        #calc CRC
+        inQarray = inQ.queue
+        inQNum = [ord(x) for x in inQarray]
+        data = inQNum[:6]
+        crc = Crc16Modbus.calc(data)
+
+        # check CRC
+        if inQNum[6] == crc % 256 and inQNum[7] == crc / 256:
+            #print("CRC ok")
+            #print("REQ: "),
+            #print ' '.join(format(x, '02x') for x in inQNum)
+
+            #clear queue
+            request = inQNum
+            inQ = Queue.Queue()
+
+            address = inQNum[0]
+
+            if(address == 0x1):
+                i = 1
+                #print ("SmartMeter")
+            if(address == 0x15):
+                i = 1
+                #print ("BYD")
+                #print ' '.join(format(x, '02x') for x in inQNum)
+
+            messageFound = True
+        else:
+            inQ.get()
+    if(messageFound):
+        # now handly reply
+
+        # get length of reply
+        if inQ.qsize() == 3:
+            replyByteCount = ord(ser_bytes)
+            #print("byteCount: " + str(int(replyByteCount)))
+        if replyByteCount > 0 and inQ.qsize() == replyByteCount+5:
+            # check CRC
+            inQarray = inQ.queue
+            inQNum = [ord(x) for x in inQarray]
+            data = inQNum[:replyByteCount+3]
+            crc = Crc16Modbus.calc(data)
+
+            # reset vars
+            inQ = Queue.Queue()
+            messageFound = False
+
+            # handle message
+            if inQNum[replyByteCount+3] == crc % 256 and inQNum[replyByteCount+4] == crc / 256:
+                address = inQNum[0]
+                #print("reply crc ok")
+
+                if (address == 0x1):
+                    i = 1
+                    #print ("SmartMeter")
+                if (address == 0x15):
+                    i = 1
+                    #print ("BYD")
+
+                if(bytearray(request) == Command2):
+                    offset = 3
+                    soc = toInt(inQNum[offset+6], inQNum[offset+7])/100.0
+                    voltage = toInt(inQNum[offset+16], inQNum[offset+17])/10.0
+                    power = toInt(inQNum[offset+18], inQNum[offset+19])
+                    print("SOC: " + str(soc) + "%, " + "Voltage: " + str(voltage) + ", Power: " + str(power))
+                    print ' '.join(format(x, '02x') for x in inQNum)
+            else:
+                print("reply CRC broken")
+
+""""
+    # no request detected
     if messageFound == False:
         secondByte = firstByte
         firstByte = ser_bytes
-        #print(firstByte)
 
         if ord(firstByte) == 3 and ord(secondByte) == 1:
             messageFound = True
+
             MSG = []
             orgMSG = []
             MSG.append(ord(secondByte))
@@ -92,7 +166,8 @@ while ser.is_open:
             orgMSG.append(firstByte)
             byteCounter = 1
             #print("MSG to BYD")
-    else:
+    # found request        
+    if messageFound == True:
         MSG.append(ord(ser_bytes))
         orgMSG.append(ser_bytes)
         byteCounter = byteCounter + 1
@@ -102,16 +177,17 @@ while ser.is_open:
             crc = Crc16Modbus.calc(data)
 
             if MSG[6] == crc%256 and MSG[7] == crc/256:
-                #print("Request recieved")
+                print("Request recieved")
                 #print("CRC - OK: (" + str(crc % 256) + ", " + str(crc / 256)+")")
-                #print("REQ: " + str(MSG))
-                #print("Register: " )
 
                 messageFound = False
                 REQ = list(MSG)
                 MSG = []
                 orgMSG = []
                 byteCounter = 0
+
+                print("REQ: "),
+                print ' '.join(format(x, '02x') for x in REQ)
             else:
                 #print("found reply")
                 #print(" ->Length: " + str(MSG[2]))
@@ -153,14 +229,16 @@ while ser.is_open:
 
                             BE.append(result)
 
-                    if bytearray(REQ) == Command1:
+                    #if bytearray(REQ) == Command3:
                         #print ' '.join(format(x, '02x') for x in REQ)
                         #print ' '.join(format(x, '02x') for x in data)
-                        print ' '.join(format(ord(x), '02x') for x in orgMSG)
+                    #print ' '.join(format(ord(x), '02x') for x in orgMSG)
                         #print ' '.join(str(ord(x)) for x in orgMSG)
 
                         #print("BE: " + str(BE))
                         #print("LE: " + str(LE))
+                    print">",
+                    print("msglen: " + str(msgLen))
 
                     messageFound = False
                     MSG = []
@@ -168,10 +246,14 @@ while ser.is_open:
                     REQ = []
                     byteCounter = 0
                     gotLength = False
-
+                    
+    if gotLength == False and byteCounter != 7:
+        print("abc")
+            #what now
 
     #print(strftime("%Y-%m-%d_%H-%M %S",gmtime()) + ": " + repr(ser_bytes))
     #f.write(strftime("%Y-%m-%d_%H-%M %S",gmtime()) + ": " + repr(ser_bytes))
+"""
 
 ser.close()
 #f.close()
