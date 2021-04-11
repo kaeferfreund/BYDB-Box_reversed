@@ -144,7 +144,19 @@ while ser.is_open:
                     soc = toInt(inQNum[offset+6], inQNum[offset+7])/100.0
                     voltage = toInt(inQNum[offset+16], inQNum[offset+17])/10.0
                     power = toInt(inQNum[offset+18], inQNum[offset+19])
-                    print("SOC: " + str(soc) + "%, " + "Voltage: " + str(voltage) + ", Power: " + str(power))
+                    tMin = toInt(inQNum[offset+24], inQNum[offset+25])/10.0
+                    tMax = toInt(inQNum[offset+26], inQNum[offset+27])/10.0
+                    soh = toInt(inQNum[offset+46], inQNum[offset+47])/100.0
+                    energyTroughputOut = ((inQNum[offset+40] << 24)|(inQNum[offset+41] << 16)|(inQNum[offset+42] << 8)|inQNum[offset+43])
+                    energyTroughputIn = ((inQNum[offset+32] << 24)|(inQNum[offset+33] << 16)|(inQNum[offset+34] << 8)|inQNum[offset+35])
+                    efficiency = energyTroughputOut/float(energyTroughputIn)
+                    capacity = toInt(inQNum[offset+8], inQNum[offset+9])
+                    energyStored = toInt(inQNum[offset+10], inQNum[offset+11])
+                    bcuTemp = toInt(inQNum[offset+44], inQNum[offset+45])
+
+                    print("bytes:" + str(replyByteCount) + " SOC: " + str(soc) + " Voltage: " + str(voltage) + " Power: " + str(power) + "%, ")
+                    print("Efficiency: " + str(efficiency) + "%, " + " EnergyStored: "+ str(energyStored) + " TroughputOut: " + str(energyTroughputOut)  + " TroughputIn: " + str(energyTroughputIn) + " SOH: " + str(soh))
+                    print("bcuTemp: " + str(bcuTemp) + " tMin: " + str(tMin) + " tMax: " + str(tMax) )
                     print ' '.join(format(x, '02x') for x in inQNum)
             else:
                 print("reply CRC broken")
