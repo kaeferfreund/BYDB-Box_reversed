@@ -48,13 +48,14 @@ def toFloat(hBI, lBI):
 Command1 = bytearray(b'\x15\x03\x01\x91\x00\x01\xd7\x0f')
 Command2 = bytearray(b'\x15\x03\x01\x2c\x00\x18\x86\xe1')
 Command3 = bytearray(b'\x01\x03\x04\x00\x00\x10\x45\x36')
+Command4 = bytearray(b'\x15\x10\x01\x91\x00\x01\x52\xcc')
 
 # open serialPort
 # please replace /dev/cu.usbserial-A50285BI with your actual device
 # bitte ersetzen Sie /dev/cu.usbserial-A50285BI durch Ihr Gerät
 
 ser = serial.Serial(
-    port='COM6',\
+    port='COM9',\
     baudrate=9600,\
     parity=serial.PARITY_NONE,\
     stopbits=serial.STOPBITS_ONE,\
@@ -103,8 +104,7 @@ while ser.is_open:
                 #print ("SmartMeter")
             if(address == 0x15):
                 i = 1
-                #print ("BYD")
-                #print ' '.join(format(x, '02x') for x in inQNum)
+                print ' '.join(format(x, '02x') for x in inQNum)
 
             messageFound = True
         else:
@@ -137,7 +137,7 @@ while ser.is_open:
                     #print ("SmartMeter")
                 if (address == 0x15):
                     i = 1
-                    #print ("BYD")
+                    print ' '.join(format(x, '02x') for x in inQNum)
 
                 if(bytearray(request) == Command2):
                     offset = 3
@@ -154,12 +154,15 @@ while ser.is_open:
                     energyStored = toInt(inQNum[offset+10], inQNum[offset+11])
                     bcuTemp = toInt(inQNum[offset+44], inQNum[offset+45])
 
-                    print("bytes:" + str(replyByteCount) + " SOC: " + str(soc) + " Voltage: " + str(voltage) + " Power: " + str(power) + "%, ")
+                    print("bytes:" + str(replyByteCount) + " SOC: " + str(soc) + " Voltage: " + str(voltage) + " Power: " + str(power) + "W, ")
                     print("Efficiency: " + str(efficiency) + "%, " + " EnergyStored: "+ str(energyStored) + " TroughputOut: " + str(energyTroughputOut)  + " TroughputIn: " + str(energyTroughputIn) + " SOH: " + str(soh))
-                    print("bcuTemp: " + str(bcuTemp) + " tMin: " + str(tMin) + " tMax: " + str(tMax) )
+                    print("bcuTemp: " + str(bcuTemp/10.0) + " tMin: " + str(tMin) + " tMax: " + str(tMax) )
                     print ' '.join(format(x, '02x') for x in inQNum)
             else:
                 print("reply CRC broken")
+                if (bytearray(request) == Command4):
+                    print "write reply"
+                    print ' '.join(format(x, '02x') for x in inQNum)
 
 """"
     # no request detected
