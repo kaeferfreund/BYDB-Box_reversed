@@ -3,6 +3,8 @@ import time
 from crccheck.crc import Crc16Modbus
 #55 AA 01 FF 00 00 FF
 
+# JKBMS Communication first steps
+
 def toInt(hB, lB):
     result = (hB * 256) + lB
     if (result > 32768):
