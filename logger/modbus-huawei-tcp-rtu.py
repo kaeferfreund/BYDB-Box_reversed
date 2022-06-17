@@ -136,31 +136,31 @@ for x in range(2000000):
         p4_ = p4
       
     response = client.read_holding_registers(address=32069, count=1, unit=1)
-    ac_v1 = float(np.int16(response.registers[0]))/10.0
+    ac_v1 =np.int16(response.registers[0])/10.0
     if(ac_v1 != ac_v1_):
         mqtt_client.publish("huawei/ac_v1", payload=ac_v1)
         ac_v1_ = ac_v1
     
     response = client.read_holding_registers(address=32070, count=1, unit=1)
-    ac_v2 = float(np.int16(response.registers[0]))/10.0
+    ac_v2 =np.int16(response.registers[0])/10.0
     if(ac_v2 != ac_v2_):
         mqtt_client.publish("huawei/ac_v2", payload=ac_v2)
         ac_v2_ = ac_v2
     
     response = client.read_holding_registers(address=32071, count=1, unit=1)
-    ac_v3 = float(np.int16(response.registers[0]))/10.0
+    ac_v3 = np.int16(response.registers[0])/10.0
     if(ac_v3 != ac_v3_):
         mqtt_client.publish("huawei/ac_v3", payload=ac_v3)
         ac_v3_ = ac_v3
     
     response = client.read_holding_registers(address=32084, count=1, unit=1)
-    pf = float(np.int16(response.registers[0]))/1000.0
+    pf = np.int16(response.registers[0])/1000.0
     if(pf != pf_):
         mqtt_client.publish("huawei/pf", payload=pf)
         pf_ = pf
     
     response = client.read_holding_registers(address=40122, count=1, unit=1)
-    pf2 = float(np.int16(response.registers[0]))/1000.0
+    pf2 = np.int16(response.registers[0])/1000.0
     if(pf2 != pf2_):
         mqtt_client.publish("huawei/pf2", payload=pf2)
         pf2_ = pf2
