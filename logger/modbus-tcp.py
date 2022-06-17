@@ -22,7 +22,7 @@ ef1_= ef2_= ef3_ = 0
 ee1_= ee2_= ee3_ = 0
 f_ = 0
 
-for x in range(20000):
+for x in range(2000000):
     
     response = client.read_holding_registers(address=0x5B00, count=0x3E, unit=1)
     
@@ -36,12 +36,16 @@ for x in range(20000):
             
         if(p1 != p1_):
             mqtt_client.publish("smartmeter/p1", payload=p1)
+            p1_ = p1
         if(p2 != p2_):
             mqtt_client.publish("smartmeter/p2", payload=p2)
+            p2_ = p2
         if(p3 != p3_):
             mqtt_client.publish("smartmeter/p3", payload=p3)
+            p3_ = p3
         if(psum != psum_):
             mqtt_client.publish("smartmeter/psum", payload=psum)
+            psum_ = psum
 
         # # -----------
         # # voltages
@@ -52,10 +56,13 @@ for x in range(20000):
 
         if(v1 != v1_):
             mqtt_client.publish("smartmeter/v1", payload=v1)
+            v1_=v1
         if(v2 != v2_):
             mqtt_client.publish("smartmeter/v2", payload=v2)
+            v2_=v2
         if(v3 != v3_):
             mqtt_client.publish("smartmeter/v3", payload=v3)
+            v3_=v3
 
         #Phase current
         c1 = ((response.registers[0x0C] << 16) | response.registers[0x0D]) / 100.0 * np.sign(p1)
@@ -64,10 +71,13 @@ for x in range(20000):
         
         if(c1 != c1_):
             mqtt_client.publish("smartmeter/c1", payload=c1)
+            c1_=c1
         if(c2 != c2_):
             mqtt_client.publish("smartmeter/c2", payload=c2)
+            c2_=c2
         if(c3 != c3_):
             mqtt_client.publish("smartmeter/c3", payload=c3)
+            c3_=c3
         
         # power factor
         pf = np.int16(response.registers[0x3A])/1000.0
@@ -77,18 +87,23 @@ for x in range(20000):
         
         if(pf != pf_):
             mqtt_client.publish("smartmeter/pf", payload=pf)
+            pf_=pf
         if(pf1 != pf1_):
             mqtt_client.publish("smartmeter/pf1", payload=pf1)
+            pf1_=pf1
         if(pf2 != pf2_):
             mqtt_client.publish("smartmeter/pf2", payload=pf2)
+            pf2_=pf2
         if(pf3 != pf3_):
             mqtt_client.publish("smartmeter/pf3", payload=pf3)
+            pf3_=pf3
             
         # frequency
         f = np.int16(response.registers[0x2C])/100.0
         
         if(f != f_):
             mqtt_client.publish("smartmeter/f", payload=f)
+            f_=f
     
     response = client.read_holding_registers(address=0x5000, count=0x08, unit=1)
     
@@ -99,8 +114,10 @@ for x in range(20000):
        
         if(ef != ef_):
             mqtt_client.publish("smartmeter/ef", payload=ef)
+            ef_=ef
         if(ee != ee_):
             mqtt_client.publish("smartmeter/ee", payload=ee)
+            ee_=ee
         
     response = client.read_holding_registers(address=0x5460, count=0x18, unit=1)
     if hasattr(response, "registers"):
@@ -111,10 +128,13 @@ for x in range(20000):
 
         if(ef1 != ef1_):
             mqtt_client.publish("smartmeter/ef1", payload=ef1)
+            ef1_=ef1
         if(ef2 != ef2_):
             mqtt_client.publish("smartmeter/ef2", payload=ef2)
+            ef2_=ef2
         if(ef3 != ef3_):
             mqtt_client.publish("smartmeter/ef3", payload=ef3)
+            ef3_=ef3
         
         ee1 = (np.left_shift(response.registers[0x0C],48) | np.left_shift(response.registers[0x0D],32) | np.left_shift(response.registers[0x0E],16) | response.registers[0x0F]) / 100.0
         ee2 = (np.left_shift(response.registers[0x10],48) | np.left_shift(response.registers[0x11],32) | np.left_shift(response.registers[0x12],16) | response.registers[0x13]) / 100.0
@@ -122,9 +142,12 @@ for x in range(20000):
 
         if(ee1 != ee1_):
             mqtt_client.publish("smartmeter/ee1", payload=ee1)
+            ee1_=ee1
         if(ee2 != ee2_):
             mqtt_client.publish("smartmeter/ee2", payload=ee2)
+            ee2_=ee2
         if(ee3 != ee3_):
             mqtt_client.publish("smartmeter/ee3", payload=ee3)
+            ee3_=ee3
 
 client.close()
