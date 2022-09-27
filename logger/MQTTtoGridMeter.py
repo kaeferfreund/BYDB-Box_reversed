@@ -41,13 +41,7 @@ MQTTNAME = "MQTTtoMeter"
 Zaehlersensorpfad = "smartmeter/#"
 
 # Variblen setzen
-verbunden = 0
-durchlauf = 0
-maxcellvoltage = 3.0
-psum = 0
-totalin = 0
-totalout = 0
-
+psum, totalin, totalout, v1, v2, v3, c1, c2, c3, p1, p2, p3 = 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
 
 # MQTT Abfragen:
 
@@ -82,8 +76,9 @@ def on_connect(client, userdata, flags, rc):
 
 
 def on_message(client, userdata, msg):
+    global psum, totalin, totalout, v1, v2, v3, c1, c2, c3, p1, p2, p3 
+  
     try:
-        global psum, totalin, totalout, v1, v2, v3, c1, c2, c3, p1, p2, p3
         
         if msg.topic == "smartmeter/psum":
           psum = float(msg.payload)
@@ -154,25 +149,27 @@ class DbusDummyService:
         path, settings['initial'], writeable=True, onchangecallback=self._handlechangedvalue)
 
     gobject.timeout_add(100, self._update) # pause 1000ms before the next request
-
-  
   
   
   def _update(self):
-    self._dbusservice['/Ac/Power'] =  psum # positive: consumption, negative: feed into grid
-    self._dbusservice['/Ac/L1/Voltage'] = v1
-    self._dbusservice['/Ac/L2/Voltage'] = v2
-    self._dbusservice['/Ac/L3/Voltage'] = v3
-    self._dbusservice['/Ac/L1/Current'] = c1
-    self._dbusservice['/Ac/L2/Current'] = c2
-    self._dbusservice['/Ac/L3/Current'] = c3
-    self._dbusservice['/Ac/L1/Power'] = p1
-    self._dbusservice['/Ac/L2/Power'] = p2
-    self._dbusservice['/Ac/L3/Power'] = p3
+    global psum, totalin, totalout, v1, v2, v3, c1, c2, c3, p1, p2, p3 
 
-    self._dbusservice['/Ac/Energy/Forward'] = totalin
-    self._dbusservice['/Ac/Energy/Reverse'] = totalout
-    logging.info("House Consumption: {:.0f}".format(psum))
+    self._dbusservice['/Ac/Power'] =  psum # positive: consumption, negative: feed into grid
+    self._dbusservice['/Ac/L1/Voltage'] = v1 
+    self._dbusservice['/Ac/L2/Voltage'] = v2 
+    self._dbusservice['/Ac/L3/Voltage'] = v3 
+    self._dbusservice['/Ac/L1/Current'] = c1 
+    self._dbusservice['/Ac/L2/Current'] = c2 
+    self._dbusservice['/Ac/L3/Current'] = c3 
+    self._dbusservice['/Ac/L1/Power'] = p1 
+    self._dbusservice['/Ac/L2/Power'] = p2 
+    self._dbusservice['/Ac/L3/Power'] = p3 
+
+    if(totalin > 0):
+      self._dbusservice['/Ac/Energy/Forward'] = totalin
+    if(totalout > 0):
+      self._dbusservice['/Ac/Energy/Reverse'] = totalout
+    # logging.info("House Consumption: {:.0f}".format(psum))
     # increment UpdateIndex - to show that new data is available
     index = self._dbusservice[path_UpdateIndex] + 1  # increment index
     if index > 255:   # maximum value of the index
